@@ -444,8 +444,25 @@ sidebar:
           items:
             - text: overflow
               link: /wp/2025/week1/pwn/overflow
-            - text: "GNU Debugger"
-              link: /wp/2025/week1/pwn/gdb_debugger
+            - text: GNU Debugger
+              link: /wp/2025/week1/pwn/gnu_debugger
+            - text: input_function
+              link: /wp/2025/week1/pwn/input_function
+            - text: INTbug
+              link: /wp/2025/week1/pwn/INTbug
+            - text: pwn's door
+              link: /wp/2025/week1/pwn/pwnsdoor
+        - text: Reverse
+          collapsed: true
+          items:
+            - text: puzzle
+              link: /wp/2025/week1/reverse/puzzle
+            - text: plzdebugme
+              link: /wp/2025/week1/reverse/plzdebugme
+            - text: Strange Base
+              link: /wp/2025/week1/reverse/strange-base
+            - text: x0r
+              link: /wp/2025/week1/reverse/x0r
         - text: Web
           collapsed: true
           items:
@@ -454,7 +471,7 @@ sidebar:
             - text: strange_login
               link: /wp/2025/week1/web/strange_login
             - text: 黑客小 W 的故事（1）
-              link: /wp/2025/week1/web/hacker-w-story-1
+              link: /wp/2025/week1/web/hacker_w
             - text: 宇宙的中心是 PHP
               link: /wp/2025/week1/web/yu-zhou-de-zhong-xin-shi-php
             - text: 别笑，你也过不了第二关
@@ -481,6 +498,10 @@ sidebar:
               link: /wp/2025/week1/misc/geming
             - text: EZ_fence
               link: /wp/2025/week1/misc/ez_fence
+            - text: OSINT-天空belong
+              link: /wp/2025/week1/misc/osint_skybelong
+            - text: MISC城邦-压缩术
+              link: /wp/2025/week1/misc/yasuo
     - text: Week 2
       items:
         - text: Web

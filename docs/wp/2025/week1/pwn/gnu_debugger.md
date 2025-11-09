@@ -2,7 +2,7 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
-# "GNU Debugger"
+# GNU Debugger
 
 > [!INFO]
 > 本题考查的是 GDB 的的使用
