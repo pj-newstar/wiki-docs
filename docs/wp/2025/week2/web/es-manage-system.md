@@ -4,7 +4,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 # 小E的管理系统
 
-SQL 注入（SQL Injection）是一种常见的网络攻击手段，攻击者通过在输入字段或请求中注入恶意的 SQL 语句，操控数据库执行意图之外的操作。
+SQL 注入<span data-desc>（SQL Injection）</span>是一种常见的网络攻击手段，攻击者通过在输入字段或请求中注入恶意的 SQL 语句，操控数据库执行意图之外的操作。
 
 此处由于使用了 SQL 语句拼接，导致了可以被 SQL 注入。
 
@@ -26,7 +26,7 @@ SQL 注入（SQL Injection）是一种常见的网络攻击手段，攻击者通
 
 过滤了 `;` 所以不能堆叠注入
 
-最终考虑使用 UNION 联合注入（通过 UNION 将攻击者构造的查询结果与合法查询结果合并，从而获取敏感数据）
+最终考虑使用 UNION 联合注入<span data-desc>（通过 UNION 将攻击者构造的查询结果与合法查询结果合并，从而获取敏感数据）</span>
 
 ## 行数
 

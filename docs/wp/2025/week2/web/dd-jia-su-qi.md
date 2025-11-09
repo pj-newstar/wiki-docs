@@ -9,9 +9,9 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ![web_dd_1](/assets/images/wp/2025/week2/web_dd_1.png)
 ![web_dd_2](/assets/images/wp/2025/week2/web_dd_2.png)
 
-点击开始，可以看到系统ping命令产生的输出。我们可以猜测，这个功能就是执行了类似下面的**系统命令**实现的。
+点击开始，可以看到系统 ping 命令产生的输出。我们可以猜测，这个功能就是执行了类似下面的**系统命令**实现的。
 
-```sh
+```bash
 ping -c 1 127.0.0.1
 ```
 
@@ -21,15 +21,15 @@ ping -c 1 127.0.0.1
 
 ### `|` — 管道（pipe）
 
-作用：**把左边命令的标准输出（stdout）连接到右边命令的标准输入（stdin）。**
+作用：**把左边命令的标准输出<span data-desc>（stdout）</span>连接到右边命令的标准输入<span data-desc>（stdin）</span>。**
 
-### `&` — 后台运行符（**ampersand**）
+### `&` — 后台运行符<span data-desc>（ampersand）</span>
 
 作用：把命令放到**后台执行**，shell 立即返回提示符，继续执行后面的命令或接受输入。
 
 ### 还有两个逻辑处理
 
-```sh
+```bash
 cmd1 && cmd2 # cmd1 成功 (exit 0) 时才执行 cmd2
 cmd1 || cmd2 # cmd1 失败时执行 cmd2
 ```
@@ -39,13 +39,13 @@ cmd1 || cmd2 # cmd1 失败时执行 cmd2
 回到这题来：
 我们的输入填在了 IP 的位置，也就是说可以往后添加一个管道符 `|`，就能注入命令了。
 
-```sh
+```bash
 ping -c 1 127.0.0.1 | ls
 ```
 
 > 这题的非预期是用 `env`，出题人失误忘记清环境变量了
 
-这题的flag存在于一个隐藏文件夹。所以我们要用 `ls -la <路径>` 的方式查看。
+这题的 flag 存在于一个隐藏文件夹。所以我们要用 `ls -la <路径>` 的方式查看。
 
 ![web_dd_3](/assets/images/wp/2025/week2/web_dd_3.png)
 
@@ -53,7 +53,7 @@ ping -c 1 127.0.0.1 | ls
 
 通配符是 **shell 用来匹配文件名的特殊符号**。
 
-当你输入一个命令（如 ls \*.txt ）时，shell 在执行命令之前会先展开通配符，把它替换成所有匹配的文件名，再把结果传给命令。
+当你输入一个命令<span data-desc>（如 ls \*.txt ）</span>时，shell 在执行命令之前会先展开通配符，把它替换成所有匹配的文件名，再把结果传给命令。
 
 例如：
 
@@ -61,7 +61,7 @@ ping -c 1 127.0.0.1 | ls
 ls *.txt
 ```
 
-→ Shell 会自动展开成:（假设存在 a.txt b.txt notes.txt ）
+→ Shell 会自动展开成:<span data-desc>（假设存在 a.txt b.txt notes.txt ）</span>
 
 ```sh
 ls a.txt b.txt notes.txt
