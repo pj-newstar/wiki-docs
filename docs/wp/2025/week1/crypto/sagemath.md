@@ -2,7 +2,7 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
-# Sagemath使用指哪？
+# SageMath 使用指南
 
 安装 [sagemath](https://www.sagemath.org/)，运行程序即可。
 

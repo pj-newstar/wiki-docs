@@ -2,8 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # input_small_function
 
+<Container type='info'>
+
+本题考查 shellcode 的进阶利用。
+</Container>
 
 这道题目是 input_function 的延续，我们把可执行文件用 IDA 打开，查看 `main` 函数：
 
@@ -118,7 +126,6 @@ io.send(shell)
 io.interactive()
 ```
 
-
 ## 思路二：构建 `read` 再次读入
 
 其实还有种思路，既然执行 shellcode 的时候，shellcode 所处段还是可读可写可执行的状态，并且 `rdx` 中还存储着此段的地址，那么可以考虑通过 shellcode 构建一个 `read`，通过这个 `read` 再次读入 shellcode，即可绕过 `main` 函数中 `read` 对于字节大小的限制。
@@ -145,4 +152,3 @@ io.send(shell2)
 
 io.interactive()
 ```
-

@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # Look at me carefully
+
+<Container type='info'>
+
+本题考查对经过混淆后的代码的理解。
+</Container>
 
 首先打开 `main` 函数分析，发现 `sub_4016E0` 这个函数的调用似乎很多
 

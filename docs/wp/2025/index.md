@@ -11,7 +11,7 @@ import { ElCollapse, ElCollapseItem } from 'element-plus'
 import 'element-plus/es/components/collapse/style/css'
 import 'element-plus/es/components/collapse-item/style/css'
 
-import AuthorList from './AuthorList.vue'
+// import AuthorList from './AuthorList.vue'
 </script>
 
 # WriteUp - NewStar CTF 2025
@@ -31,9 +31,10 @@ import AuthorList from './AuthorList.vue'
 
 编辑者有：
 
+- <Link theme="underline hover" href="https://github.com/Kamiya721">Cnily03</Link>
 - <Link theme="underline hover" href="https://github.com/Kamiya721">KAMIYA</Link>
 - <Link theme="underline hover" href="https://github.com/nick-cjyx9">NickChenヰ</Link>
 
 出题人名单：
 
-<AuthorList />
+<!-- <AuthorList /> -->

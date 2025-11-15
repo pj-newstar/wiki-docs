@@ -2,13 +2,19 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
 
 # no shell
 
-> [!INFO]
-> 本题考查的是沙箱与 ROP
+<Container type='info'>
+
+本题考查沙箱与 ROP.
+</Container>
 
 参考链接
+
 - [Linux沙箱之seccomp介绍 | arch3rn4r](https://arch3rn4r.github.io/2024/09/21/Linux%E6%B2%99%E7%AE%B1%E4%B9%8Bseccomp%E4%BB%8B%E7%BB%8D/)
 - [ROP入门 - Hello CTF](https://hello-ctf.com/hc-pwn/ROP/)
 
@@ -22,11 +28,13 @@ sudo gem install seccomp-tools
 ```
 
 ## 预处理
+
 在安装好工具后，就来到了预处理环节，也就是获取“其他信息“。
 
 ![信息收集](/assets/images/wp/2025/week2/no-shell_1.png)
 
 `check` 下可以看到程序的一些基础信息：
+
 - amd64 架构, 64 位, 小端序<span data-desc>（little）</span>
 - No canary, 没有 canary 保护
 - No PIE, 没有 PIE 保护
@@ -103,7 +111,6 @@ write(1,buf,0x40)
 
 ![ROPgadget](/assets/images/wp/2025/week2/no-shell_9.png)
 
-
 `pop rdi`，`pop rsi`，`pop rdx`，还有一个非常关键的 `mov rdi, rax` 用于传递返回值，形似于这样的 rop 链。
 
 ![rop 链](/assets/images/wp/2025/week2/no-shell_10.png)
@@ -113,6 +120,7 @@ write(1,buf,0x40)
 `rdi`，`rsi`，`rdx` 指代 `pop rdi/rsi/rdx ; ret` 所在的地址
 
 ## exp
+
 ```python
 from pwn import *
 

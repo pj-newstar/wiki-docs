@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # plzdebugme
+
+<Container type='info'>
+
+本题考查 IDA 软件中动态调试功能的使用。
+</Container>
 
 ## 1、IDA Local 模式调试
 
@@ -31,27 +40,20 @@ IDA Pro 不仅是反汇编器，还是一个强大的调试器。
 
 调试器还提供了单步执行 <span data-desc>（<kbd>F7</kbd> 步入, <kbd>F8</kbd> 步过）</span>、查看寄存器、内存、堆栈等功能。
 
-
-
 常见错误：
 
-| 问题        | 解决方法                              |
-| --------- | --------------------------------- |
-| 无法启动调试器   | 检查是否正确选择了 “Local Windows debugger” |
-| 断点没触发     | 确保你设置的断点是在程序真正执行路径上               |
-| 一运行就崩溃或退出 | 尝试在更靠前的位置<span data-desc>（如入口点）</span>设置断点               |
-| 无法查看栈或寄存器 | 运行状态下才能看到，静态分析时是空的                |
-
-
-
+| 问题               | 解决方法                                                      |
+| ------------------ | ------------------------------------------------------------- |
+| 无法启动调试器     | 检查是否正确选择了 “Local Windows debugger”                   |
+| 断点没触发         | 确保你设置的断点是在程序真正执行路径上                        |
+| 一运行就崩溃或退出 | 尝试在更靠前的位置<span data-desc>（如入口点）</span>设置断点 |
+| 无法查看栈或寄存器 | 运行状态下才能看到，静态分析时是空的                          |
 
 ## 2、IDA Remote 模式<span data-desc>（远程调试）</span>
 
 **Q**：为什么需要 Remote 模式？
 
 **A**：程序必须在它所支持的平台上运行。
-
-
 
 如果你的程序不是本机架构，比如：
 
@@ -60,19 +62,21 @@ IDA Pro 不仅是反汇编器，还是一个强大的调试器。
 - 调试 Android 的 so 文件
 
 那么你有两个选择：
+
 - 把这个程序放到目标系统<span data-desc>（如 ARM Linux）</span>+ 安装 IDA + 用 Local 调试<span data-desc>（成本高）</span>。
 - 使用 Remote 模式：IDA 在你主机上，通过网络连接一个运行目标程序的调试器代理。
 
 Remote 模式本质：
+
 - 你在目标平台上运行一个 调试代理程序<span data-desc>（IDA Debug Server）</span>，IDA 通过网络连接这个代理，远程控制调试过程。
 
-
-
 常见代理如：
+
 - linux_server<span data-desc>（调试 Linux ELF）</span>
 - android_server<span data-desc>（调试安卓 .so）</span>
 
 环境要求：
+
 1. 你需要有一个 linux 环境
 2. 在 IDA-dbgsrv 里有个文件叫 linux_server，把它放到你的 linux 环境里
 
@@ -96,18 +100,17 @@ chmod 777 linux_server
 ![linux 环境输入](/assets/images/wp/2025/week1/plzdebugme_6.png)
 
 ## 3、 基础调试技巧
-| 功能         | 快捷键       | 说明            |
-| ---------- | --------- | ------------- |
-| 设置断点       | <kbd>F2</kbd>        | 点击某行或在地址上按 <kbd>F2</kbd> |
-| 启动调试       | <kbd>F9</kbd>        | 开始运行程序        |
-| 继续运行       | <kbd>F9</kbd>        | 从当前断点继续       |
-| 单步跳入       | <kbd>F7</kbd>        | 进入子函数         |
-| 单步跳过       | <kbd>F8</kbd>        | 跳过函数<span data-desc>（不进入）</span>     |
-| 显示寄存器      | <kbd>Alt</kbd><kbd>C</kbd>     | 弹出 CPU 寄存器窗口  |
-| 调试内存<span data-desc>（Dump）</span> | <kbd>D</kbd>         | 查看任意内存段       |
-| 查看字符串      | <kbd>⇧ Shift</kbd><kbd>F12</kbd> | 快速查看程序中引用的字符串 |
 
-
+| 功能                                    | 快捷键                           | 说明                                      |
+| --------------------------------------- | -------------------------------- | ----------------------------------------- |
+| 设置断点                                | <kbd>F2</kbd>                    | 点击某行或在地址上按 <kbd>F2</kbd>        |
+| 启动调试                                | <kbd>F9</kbd>                    | 开始运行程序                              |
+| 继续运行                                | <kbd>F9</kbd>                    | 从当前断点继续                            |
+| 单步跳入                                | <kbd>F7</kbd>                    | 进入子函数                                |
+| 单步跳过                                | <kbd>F8</kbd>                    | 跳过函数<span data-desc>（不进入）</span> |
+| 显示寄存器                              | <kbd>Alt</kbd><kbd>C</kbd>       | 弹出 CPU 寄存器窗口                       |
+| 调试内存<span data-desc>（Dump）</span> | <kbd>D</kbd>                     | 查看任意内存段                            |
+| 查看字符串                              | <kbd>⇧ Shift</kbd><kbd>F12</kbd> | 快速查看程序中引用的字符串                |
 
 ## 4、常见调试窗口介绍
 
@@ -119,20 +122,14 @@ chmod 777 linux_server
 
 ![寄存器表](/assets/images/wp/2025/week1/plzdebugme_7.png)
 
-
 ![寄存器表](/assets/images/wp/2025/week1/plzdebugme_8.png)
 
 通用寄存器：如 `EAX`, `EBX`, `ECX`, `ESP`, `EBP` 等，展示当前 CPU 寄存器状态
 
-
-
 `XMM` 寄存器：显示 `SIMD` 浮点指令用到的寄存器，常用于加密算法或浮点运算
-
 
 > [!INFO]
 > 寄存器中的值可以直接右键修改！
-
-
 
 ### 2️⃣ Stack<span data-desc>（栈窗口）</span>
 
@@ -154,14 +151,11 @@ chmod 777 linux_server
 - Windows 动态链接库<span data-desc>（如 kernel32.dll, user32.dll）</span>
 - 可以查看模块基址、大小等。
 
-
-
 ### 4️⃣ Output 窗口<span data-desc>（下方）</span>
 
 实时输出调试信息、IDA 插件信息等，便于跟踪调试过程中的反馈。
 
 ![output 窗口](/assets/images/wp/2025/week1/plzdebugme_11.png)
-
 
 ## 题解过程
 

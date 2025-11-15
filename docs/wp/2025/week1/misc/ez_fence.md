@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # EZ_fence
+
+<Container type='info'>
+
+题考查 Base64 编码、栅栏加密。
+</Container>
 
 下载好附件可以看到一张图片，并且题干上提示了 rar，可以知道图片内藏了一个压缩包，用 winhex 打开图片，搜索 rar 文件头 `52 61 72 21 1A 07 01`<span data-desc>（从文件头可以看出这是一个加密后的压缩包）</span>，可以看到
 

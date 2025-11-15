@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 尤皮·埃克斯历险记（1）
+
+<Container type='info'>
+
+本题考查 UPX 脱壳及反调试。
+</Container>
 
 将 exe 拖入 IDA 之后发现主函数不见了，程序只有一两个函数，再用 DIE 或者 exeinfope 查壳，发现有 UPX 壳。
 

@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 唯一表示
+
+<Container type='info'>
+
+本题考查 CRT.
+</Container>
 
 这里简单介绍一个函数：
 

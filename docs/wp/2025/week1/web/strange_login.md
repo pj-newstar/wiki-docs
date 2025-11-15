@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # strange_login
+
+<Container type='info'>
+
+本题考查简单的 SQL 注入漏洞利用。
+</Container>
 
 这道题是一个典型的 SQL 注入挑战。题目描述中的 `1=1` 暗示了我们可以利用逻辑真值来绕过登录验证。我们猜测后台的 SQL 查询语句是：
 

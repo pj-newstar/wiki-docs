@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 小跳蛙
+
+<Container type='info'>
+
+本题考查 GCD 及简单的数论知识。
+</Container>
 
 题目脚本已经告诉我们了，每次给出一个坐标 `(x,y)`，我们需要返回最后小青蛙会停留的坐标。
 

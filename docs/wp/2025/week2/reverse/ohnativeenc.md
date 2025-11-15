@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # OhNativeEnc
+
+<Container type='info'>
+
+本题考查对 Android 原生加密函数的逆向分析。
+</Container>
 
 和 Week1 的安卓一样寻找加密。
 

@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # Puzzle
+
+<Container type='info'>
+
+本题考查 IDA 软件中字符串搜索的使用。
+</Container>
 
 > [!INFO]
 > 这道题主要目的是让新生知道 IDA 的一些常见操作。
@@ -25,13 +34,14 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 可以知道函数名字即为 flag 的第二部分 `Like_7his_Jig`
 
-点进  `Its_about_part3` 函数：
+点进 `Its_about_part3` 函数：
 
 ![第三部分](/assets/images/wp/2025/week1/puzzle_4.png)
 
 有一个异或 `0xad`，密文在 `encrypted_array` 中，<kbd>⇧ Shift</kbd><kbd>e</kbd> 提取出来为：`0xDE, 0xED, 0xDA, 0xF2, 0xDD, 0xD8, 0xD7, 0xD7`
 
 解密：
+
 ```py
 enc = [0xDE, 0xED, 0xDA, 0xF2, 0xDD, 0xD8, 0xD7, 0xD7]
 part3 = ""

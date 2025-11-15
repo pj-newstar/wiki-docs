@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # multi-headach3
+
+<Container type='info'>
+
+本题考查对 HTTP 协议及 `robots.txt` 文件的理解与应用。
+</Container>
 
 ## 前言：给CTF新手的话
 

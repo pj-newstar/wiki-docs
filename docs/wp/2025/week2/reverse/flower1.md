@@ -2,9 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 采一朵花，送给艾达（1）
 
+<Container type='info'>
 
+本题考查简单的花指令分析。
+</Container>
 
 程序主函数：
 

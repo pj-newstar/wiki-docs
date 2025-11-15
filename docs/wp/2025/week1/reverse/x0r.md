@@ -2,7 +2,17 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
-# x0r
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
+# X0r
+
+<Container type='info'>
+
+本题考查异或加密的逆向分析。
+</Container>
+
 加密逻辑都在 `main` 函数中：
 
 ```c
@@ -77,4 +87,5 @@ for i in range(len(temp)):
 flag = temp.decode()
 print(flag)
 ```
+
 最后得到的 flag 为 `flag{y0u_Kn0W_b4s1C_xOr}`

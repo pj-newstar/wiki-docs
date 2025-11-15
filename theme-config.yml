@@ -442,27 +442,29 @@ sidebar:
         - text: Pwn
           collapsed: true
           items:
-            - text: overflow
-              link: /wp/2025/week1/pwn/overflow
-            - text: GNU Debugger
-              link: /wp/2025/week1/pwn/gnu_debugger
-            - text: input_function
-              link: /wp/2025/week1/pwn/input_function
-            - text: INTbug
-              link: /wp/2025/week1/pwn/INTbug
             - text: pwn's door
               link: /wp/2025/week1/pwn/pwnsdoor
+            - text: GNU Debugger
+              link: /wp/2025/week1/pwn/gnu_debugger
+            - text: INTbug
+              link: /wp/2025/week1/pwn/intbug
+            - text: overflow
+              link: /wp/2025/week1/pwn/overflow
+            - text: input_function
+              link: /wp/2025/week1/pwn/input_function
         - text: Reverse
           collapsed: true
           items:
-            - text: puzzle
+            - text: X0r
+              link: /wp/2025/week1/reverse/x0r
+            - text: Puzzle
               link: /wp/2025/week1/reverse/puzzle
-            - text: plzdebugme
-              link: /wp/2025/week1/reverse/plzdebugme
+            - text: EzMyDroid
+              link: /wp/2025/week1/reverse/ezmydroid
             - text: Strange Base
               link: /wp/2025/week1/reverse/strange-base
-            - text: x0r
-              link: /wp/2025/week1/reverse/x0r
+            - text: plzdebugme
+              link: /wp/2025/week1/reverse/plzdebugme
         - text: Web
           collapsed: true
           items:
@@ -470,57 +472,106 @@ sidebar:
               link: /wp/2025/week1/web/multi-headach3
             - text: strange_login
               link: /wp/2025/week1/web/strange_login
-            - text: 黑客小 W 的故事（1）
-              link: /wp/2025/week1/web/hacker_w
             - text: 宇宙的中心是 PHP
-              link: /wp/2025/week1/web/yu-zhou-de-zhong-xin-shi-php
+              link: /wp/2025/week1/web/center-php
             - text: 别笑，你也过不了第二关
-              link: /wp/2025/week1/web/bie-xiao-ni-ye-guo-bu-liao-di-er-guan
+              link: /wp/2025/week1/web/no-laugh
             - text: 我真得控制你了
-              link: /wp/2025/week1/web/wo-zhen-dei-kong-zhi-ni-le
+              link: /wp/2025/week1/web/control-you
+            - text: 黑客小 W 的故事（1）
+              link: /wp/2025/week1/web/blackw1
         - text: Crypto
           collapsed: true
           items:
+            - text: 随机数之旅 1
+              link: /wp/2025/week1/crypto/random1
+            - text: SageMath 使用指南
+              link: /wp/2025/week1/crypto/sagemath
+            - text: 初识 RSA
+              link: /wp/2025/week1/crypto/rsa
             - text: 小跳蛙
               link: /wp/2025/week1/crypto/xiaotiaowa
             - text: 唯一表示
               link: /wp/2025/week1/crypto/weiyibiaoshi
-            - text: 随机数之旅 1
-              link: /wp/2025/week1/crypto/suijishu1
-            - text: sagemath
-              link: /wp/2025/week1/crypto/sagemath
         - text: Misc
           collapsed: true
           items:
-            - text: 前有文字，所以搜索很有用
-              link: /wp/2025/week1/misc/sousuo
+            - text: Sign in
+              link: /wp/2025/week1/misc/signin
             - text: 我不要革命失败
               link: /wp/2025/week1/misc/geming
+            - text: Misc 城邦：压缩术
+              link: /wp/2025/week1/misc/compression
+            - text: 天空 belong
+              link: /wp/2025/week1/misc/skybelong
             - text: EZ_fence
               link: /wp/2025/week1/misc/ez_fence
-            - text: OSINT-天空belong
-              link: /wp/2025/week1/misc/osint_skybelong
-            - text: MISC城邦-压缩术
-              link: /wp/2025/week1/misc/yasuo
+            - text: 前有文字，所以搜索很有用
+              link: /wp/2025/week1/misc/sousuo
     - text: Week 2
       items:
+        - text: Pwn
+          collapsed: true
+          items:
+            - text: no shell
+              link: /wp/2025/week2/pwn/no-shell
+            - text: syscall
+              link: /wp/2025/week2/pwn/syscall
+            - text: 刻在栈里的秘密
+              link: /wp/2025/week2/pwn/stack-secret
+            - text: input_small_function
+              link: /wp/2025/week2/pwn/input_small_function
+            - text: calc_beta
+              link: /wp/2025/week2/pwn/calc_beta
+        - text: Reverse
+          collapsed: true
+          items:
+            - text: 尤皮·埃克斯历险记（1）
+              link: /wp/2025/week2/reverse/upx1
+            - text: Forgotten_Code
+              link: /wp/2025/week2/reverse/forgotten_code
+            - text: Look at me carefully
+              link: /wp/2025/week2/reverse/look-at-me-carefully
+            - text: OhNativeEnc
+              link: /wp/2025/week2/reverse/ohnativeenc
+            - text: 采一朵花，送给艾达（1）
+              link: /wp/2025/week2/reverse/flower1
         - text: Web
           collapsed: true
           items:
+            - text: 真的是签到诶
+              link: /wp/2025/week2/web/sign-really
             - text: DD 加速器
-              link: /wp/2025/week2/web/dd-jia-su-qi
-            - text: 小E的管理系统
-              link: /wp/2025/week2/web/es-manage-system
-            - text: 搞点哦润吉吃吃 🍊
-              link: /wp/2025/week2/web/get-oranges-to-eat
-    - text: Week 3
-      items:
-        - text: Web
+              link: /wp/2025/week2/web/dd-speed
+            - text: 搞点哦润吉吃吃🍊
+              link: /wp/2025/week2/web/orange
+            - text: 小 E 的管理系统
+              link: /wp/2025/week2/web/e-manage-system
+            - text: 白帽小 K 的故事（1）
+              link: /wp/2025/week2/web/whitek1
+        - text: Crypto
           collapsed: true
           items:
-            - text: 小E的秘密计划
-              link: /wp/2025/week3/web/es-secret-plan
-            - text: ez_chain
-              link: /wp/2025/week3/web/ez_chain
-            - text: mirror_gate
-              link: /wp/2025/week3/web/mirror_gate
+            - text: 'FHE: 0&1'
+              link: /wp/2025/week2/crypto/fhe-01
+            - text: DLP_1
+              link: /wp/2025/week2/crypto/dlp1
+            - text: 置换
+              link: /wp/2025/week2/crypto/exchange
+            - text: 群论小测试
+              link: /wp/2025/week2/crypto/group-theory
+            - text: RSA_revenge
+              link: /wp/2025/week2/crypto/rsa_revenge
+        - text: Misc
+          collapsed: true
+          items:
+            - text: 美妙的音乐
+              link: /wp/2025/week2/misc/music
+            - text: 威胁情报
+              link: /wp/2025/week2/misc/qingbao
+            - text: 不敬者的闯入
+              link: /wp/2025/week2/misc/intruder
+            - text: 星期四的幻想
+              link: /wp/2025/week2/misc/thursday
+            - text: Misc 城邦：NewKeyboard
+              link: /wp/2025/week2/misc/newkeyboard

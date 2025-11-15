@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # EzMyDroid
+
+<Container type='info'>
+
+本题考查 Java 层安卓逆向中 AES 加密的分析与破解。
+</Container>
 
 `Jadx-gui` 打开搜索字符串 `Wrong`，定位代码
 

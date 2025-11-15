@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 前有文字，所以搜索很有用
+
+<Container type='info'>
+
+本题考查 Base64 编码、零宽字符隐写、SNOW 隐写、Brainfuck 编程语言、摩斯电码、字频统计等杂项内容的综合应用。
+</Container>
 
 ## Track 1
 

@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 星期四的狂想
+
+<Container type='info'>
+
+本题考查 HTTP 流量分析及简单的编码解码能力。
+</Container>
 
 我们使用 [wireshark](https://www.wireshark.org/#download) 工具可以分析 pcag 文件。
 
@@ -17,6 +26,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 3. 然后从 `uploads/index.php` 处触发攻击。
 
 `chickenvivo50.php`：
+
 ```php
 <?php
 $func_map = [
@@ -35,6 +45,7 @@ $getFunction = function($name) use ($func_map) {
 ```
 
 `crazy.php`：
+
 ```php
 <?php
 echo "Hello, world!";
@@ -58,6 +69,7 @@ function code($x) {
 ```
 
 `index.php`：
+
 ```php
 <?php
 include "chickenvivo50.php";
@@ -115,12 +127,12 @@ for i in parts:
     now_enc = final_dec + part_dec2
     missing_padding = len(now_enc) % 4
     if missing_padding:
-        now_enc += '=' * (4 - missing_padding)  
+        now_enc += '=' * (4 - missing_padding)
     print(f"[*] 尝试解码方法：反转")
     res = base64.b64decode(now_enc.encode()).decode()
     print(f"[+] 成功解码：{res}")
     final_dec += part_dec2
-    
+
 print(f"最终解码结果：{base64.b64decode(final_dec.encode()).decode()}")
 ```
 

@@ -47,7 +47,6 @@ IDA 将一直伴随逆向之旅，祝你玩得开心！
 <Container type='tip'>
 
 如果你完全不了解什么是 HTTP 协议，你可以查看 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP) 的有关内容，来了解更多。
-
 </Container>
 
 如果你了解空洞骑士，你应该知道骨钉大师一共有三位，对应题目的三个关卡。每一个关卡中都存在各种提示来帮助你完成这个题目。
@@ -64,7 +63,6 @@ IDA 将一直伴随逆向之旅，祝你玩得开心！
 <Container type='warning'>
 
 本题设计 DELETE 方法的部分内容并不符合[协议标准](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Methods/DELETE)。请大家在后续遇到 DELETE 方法时不要被本题误导。
-
 </Container>
 
 ## Misc

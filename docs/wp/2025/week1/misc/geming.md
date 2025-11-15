@@ -2,7 +2,16 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 我不要革命失败
+
+<Container type='info'>
+
+本题考查 Windows 操作系统出现蓝屏的日志分析。
+</Container>
 
 直接下载 [windbg](https://learn.microsoft.com/zh-cn/windows-hardware/drivers/debugger/) 然后打开。
 

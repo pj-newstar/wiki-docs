@@ -23,7 +23,6 @@ import 'element-plus/es/components/tooltip/style/css'
 <Container type='info'>
 
 本题考查简单的堆喷概念。
-
 </Container>
 
 尝试直接通过栈溢出覆盖返回地址会发现这是一个正常情况下的非法地址。
@@ -45,9 +44,11 @@ import 'element-plus/es/components/tooltip/style/css'
 另外，相比于前几周的 pwn 题，本题的考点较为新颖，因此直接在网络上检索到同类型的题目几乎是不太可能的。本题的难度较大，感到没有头绪是很正常的事情，切莫灰心丧气！
 
 :::tip
-- C 函数的局部变量通常存储在哪里？c 函数局部变量的地址通常是根据哪个寄存器偏移得到的？
+
+- C 函数的局部变量通常存储在哪里？C 函数局部变量的地址通常是根据哪个寄存器偏移得到的？
 - 修改函数的栈底会对函数局部变量布局造成什么影响？
 - 本题预期解无需 leak 任何地址。
+
 :::
 
 ### fmt&got
@@ -55,7 +56,6 @@ import 'element-plus/es/components/tooltip/style/css'
 <Container type='info'>
 
 本题考查利用格式化字符串漏洞覆盖内存。
-
 </Container>
 
 相信做完 Week3 的「fmt&canary」之后，你对「格式化字符串漏洞」以及「如何利用格式化字符串漏洞来泄露内存」有了一定的了解，在开始做这道题之前，你可以再了解一下：
@@ -72,7 +72,6 @@ import 'element-plus/es/components/tooltip/style/css'
 <Container type='info'>
 
 本题考查基础 XSS 以及绕过。
-
 </Container>
 
 为了获取到小 E 浏览器内的 cookie，我们需要进行跨站脚本攻击<span data-desc>（XSS）</span>。一般 xss 需要逃逸出当前属性或标签，利用特殊标签<span data-desc>（例如 script）</span>或者属性<span data-desc>（例如 onerror，onfocus 等）</span>来执行 JavaScript。但并不是所有题目都能逃逸出标签从而引入恶意标签，因此可以考虑如何闭合属性并引入恶意属性来执行 JavaScript。
@@ -93,7 +92,7 @@ import 'element-plus/es/components/tooltip/style/css'
 
 本题具有类似的原理，但是实践方式更简单，你需要在特定的位置注入你的恶意代码，然后想办法将其保存在可被执行的位置。
 
-本题根目录下的 flag 文件被保护了起来，你需要通过执行 `readflag` 来获得 flag.
+本题根目录下的 `flag` 文件被保护了起来，你需要通过执行 `readflag` 来获得 FLAG.
 
 ::: tip
 本题给予了完整的 Docker 环境附件，你可以在 Linux 上安装 Docker 环境来进行使用<span data-desc>（官方安装教程：[Install Docker](https://docs.docker.com/engine/install/ubuntu/)）</span>。

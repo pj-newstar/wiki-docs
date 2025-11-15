@@ -28,7 +28,6 @@ Week2 是从零到一的迈进，你将在这一周接触到主流 CTF 比赛的
 <Container type='info'>
 
 沙箱（Sandbox）是一种隔离的执行环境，通过虚拟化或模拟技术，限制程序对真实系统资源的访问。
-
 </Container>
 
 简单来说，就是设定了特殊的规则，指定了程序能做什么或者不能做什么。
@@ -127,7 +126,6 @@ int main() {
 自动化测试与绕过工具：[SQLmap](https://github.com/sqlmapproject/sqlmap).
 
 在学习阶段，不建议直接使用自动化工具，建议手工测试。理解注入原理后，可以使用自动化工具取代人工繁琐的工作。
-
 </Container>
 
 <ElCollapse class='vp-collapse' v-model='openCollapse'>
