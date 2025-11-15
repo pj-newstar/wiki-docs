@@ -6,7 +6,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 import Container from '@/components/docs/Container.vue'
 </script>
 
-# 天空 belong
+# OSINT：天空 belong
 
 <Container type='info'>
 

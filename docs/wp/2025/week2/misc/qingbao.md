@@ -6,7 +6,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 import Container from '@/components/docs/Container.vue'
 </script>
 
-# 威胁情报
+# OSINT：威胁情报
 
 <Container type='info'>
 

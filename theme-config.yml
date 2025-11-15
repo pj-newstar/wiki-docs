@@ -502,7 +502,7 @@ sidebar:
               link: /wp/2025/week1/misc/geming
             - text: Misc 城邦：压缩术
               link: /wp/2025/week1/misc/compression
-            - text: 天空 belong
+            - text: OSINT：天空 belong
               link: /wp/2025/week1/misc/skybelong
             - text: EZ_fence
               link: /wp/2025/week1/misc/ez_fence
@@ -567,9 +567,9 @@ sidebar:
           items:
             - text: 美妙的音乐
               link: /wp/2025/week2/misc/music
-            - text: 威胁情报
+            - text: OSINT：威胁情报
               link: /wp/2025/week2/misc/qingbao
-            - text: 不敬者的闯入
+            - text: 日志分析：不敬者的闯入
               link: /wp/2025/week2/misc/intruder
             - text: 星期四的幻想
               link: /wp/2025/week2/misc/thursday

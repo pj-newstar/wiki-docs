@@ -6,7 +6,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 import Container from '@/components/docs/Container.vue'
 </script>
 
-# 不敬者的闯入
+# 日志分析：不敬者的闯入
 
 <Container type='info'>
 
