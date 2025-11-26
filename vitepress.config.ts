@@ -27,7 +27,7 @@ export default ({ mode }: { mode: string }) => {
       <Partial<DefaultTheme.Config>>{
         siteTitle: "NewStar CTF",
 
-        socialLinks: [{ icon: "github", link: "https://github.com/project-newstar/wiki-docs" }],
+        socialLinks: [{ icon: "github", link: "https://github.com/pj-newstar/wiki-docs" }],
 
         search: {
           provider: "local",
