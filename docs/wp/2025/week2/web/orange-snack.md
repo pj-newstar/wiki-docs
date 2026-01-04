@@ -24,7 +24,7 @@ import Container from '@/components/docs/Container.vue'
 
 登录后，让我们计算 token。
 
-![网页提示](/assets/images/wp/2025/week2/orange_1.png)
+![网页提示](/assets/images/wp/2025/week2/orange-snack_1.png)
 
 且每次 token 表达式是不一样的，显然 3s 内想要计算再填入验证框中是很困难的；届时如果能利用代码脚本帮助我们自动化整个过程，这一定是能够完成的。
 
@@ -36,7 +36,7 @@ import Container from '@/components/docs/Container.vue'
 
 假设你已经掌握了 Week1 学习的 HTTP 协议相关知识，那么服务器验证每个用户的登录凭据就是叫 Cookie🍪 的东西，我们抓个包来看看。
 
-![alt text](/assets/images/wp/2025/week2/orange_2.png)
+![Image](/assets/images/wp/2025/week2/orange-snack_2.png)
 
 要想在请求 `/home` 路由后得到登录后的页面，你需要加上这个 Cookie
 
@@ -52,11 +52,11 @@ def home():
 
 现在你想知道表达式的路由，点击开始验证后抓包
 
-![alt text](/assets/images/wp/2025/week2/orange_3.png)
+![Image](/assets/images/wp/2025/week2/orange-snack_3.png)
 
 验证路由
 
-![alt text](/assets/images/wp/2025/week2/orange_4.png)
+![Image](/assets/images/wp/2025/week2/orange-snack_4.png)
 
 如果你尝试过直接通过路由传输数据，那么服务器会显示“未登录”，这是因为每个路由都经过鉴权处理，确保这些操作是授权了的
 
@@ -78,7 +78,7 @@ def verify_token():
 
 ---
 
-![alt text](/assets/images/wp/2025/week2/orange_5.png)
+![Image](/assets/images/wp/2025/week2/orange-snack_5.png)
 
 `Content-Type: application/json`：表示传输的数据格式是 JSON，从后面的相应也可以看出
 
@@ -131,12 +131,12 @@ print(res_verify.text)
 
 不过光是这样会返回
 
-![alt text](/assets/images/wp/2025/week2/orange_6.png)
+![Image](/assets/images/wp/2025/week2/orange-snack_6.png)
 
 是的，依旧需要用到 Week1 学习的 HTTP 协议知识，看到这个提示，你应该想到 `User-Agent`
 
 > [!INFO]
-> User-Agent 一般用于标识客户端类型，例如：浏览器类型<span data-desc>（Chrome、Firefox、Safari 等）</span>、操作系统<span data-desc>（Windows、macOS、Linux 等）</span>以及设备类型<span data-desc>（桌面、移动设备等）</span>服务器根据 User-Agent 返回不同的内容，可以为移动设备返回移动版页面，或者为不同浏览器提供兼容性处理如果我们不添加 UA 头，那么默认就是![alt text](/assets/images/wp/2025/week2/orange_7.png)
+> User-Agent 一般用于标识客户端类型，例如：浏览器类型<span data-desc>（Chrome、Firefox、Safari 等）</span>、操作系统<span data-desc>（Windows、macOS、Linux 等）</span>以及设备类型<span data-desc>（桌面、移动设备等）</span>服务器根据 User-Agent 返回不同的内容，可以为移动设备返回移动版页面，或者为不同浏览器提供兼容性处理如果我们不添加 UA 头，那么默认就是![Image](/assets/images/wp/2025/week2/orange-snack_7.png)
 
 所以最终脚本如下：
 
