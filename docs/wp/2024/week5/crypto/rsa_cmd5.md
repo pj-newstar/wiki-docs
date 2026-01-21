@@ -8,7 +8,9 @@ import { ElCollapse, ElCollapseItem } from 'element-plus'
 import 'element-plus/es/components/collapse/style/css'
 import 'element-plus/es/components/collapse-item/style/css'
 
-const openCollapse = []
+const vProps = {
+  openCollapse: []
+}
 </script>
 
 # RSA? cmd5!
@@ -28,10 +30,10 @@ RSA 的签名，往往是给接收方 B 确定发送方 A 的身份用的，但�
 >
 > **Bob:** 好麻烦，还要签名，算了，直接 MD5 签名一下就好了吧！
 
-<ElCollapse class='vp-collapse' v-model='openCollapse'>
+<ElCollapse class='vp-collapse' v-model='vProps.openCollapse'>
   <ElCollapseItem  class='no-border' name='attachment-content'>
   <template #title>
-    题目附件内容<span data-desc v-text='openCollapse.includes("attachment-content") ? "（点此收起）" : "（点此展开）"'></span>：
+    题目附件内容<span data-desc v-text='vProps.openCollapse.includes("attachment-content") ? "（点此收起）" : "（点此展开）"'></span>：
   </template>
 
 ::: code-group
