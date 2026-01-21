@@ -41,6 +41,7 @@ import 'element-plus/es/components/tooltip/style/css'
 在开始做这道题之前，你可以先了解一下 [FILE 结构](https://ctf-wiki.org/pwn/linux/user-mode/io-file/introduction/)。
 
 对 FILE 结构体有了大概的认知之后就可以开始思考下面这些问题:
+
 1. `printf` / `puts` 函数与 `vtable` 有什么关系。
 2. 什么样的 `vtable` 才是合法的。
 3. 怎么利用 `_wide_data` 来配合自己伪造的 `vtable`。

@@ -12,7 +12,9 @@ import 'element-plus/es/components/collapse/style/css'
 import 'element-plus/es/components/collapse-item/style/css'
 import 'element-plus/es/components/tooltip/style/css'
 
-const openCollapse = []
+const vProps = {
+  openCollapse: []
+}
 </script>
 
 # Week 2
@@ -130,10 +132,10 @@ int main() {
 
 </Container>
 
-<ElCollapse class='vp-collapse' v-model='openCollapse'>
+<ElCollapse class='vp-collapse' v-model='vProps.openCollapse'>
 <ElCollapseItem name='acknowledge-list'>
 <template #title>
-  <strong>字典</strong><span data-desc v-text='openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
+  <strong>字典</strong><span data-desc v-text='vProps.openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
 </template>
 
 <<< sql-dict.txt{plaintext}

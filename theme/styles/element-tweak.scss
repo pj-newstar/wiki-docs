@@ -2,6 +2,8 @@
   border: none;
   font-size: inherit;
   color: inherit;
+  --el-collapse-header-bg-color: transparent;
+  --el-collapse-content-bg-color: transparent;
 
   .el-collapse-item {
     border-bottom: 1px solid transparent;

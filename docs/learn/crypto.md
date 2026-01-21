@@ -11,7 +11,9 @@ import 'element-plus/es/components/collapse/style/css'
 import 'element-plus/es/components/collapse-item/style/css'
 import 'element-plus/es/components/tooltip/style/css'
 
-const openCollapse = []
+const vProps = {
+  openCollapse: []
+}
 </script>
 
 # 密码学
@@ -117,10 +119,10 @@ x = c % p // 2 # [!code highlight]
 
 对于学习 Python，了解以下知识点即可（摘自 [Python 基础教程 | 菜鸟教程](https://www.runoob.com/python)）。
 
-<ElCollapse class='vp-collapse' v-model='openCollapse'>
+<ElCollapse class='vp-collapse' v-model='vProps.openCollapse'>
 <ElCollapseItem name='acknowledge-list'>
 <template #title>
-  <strong>知识点列表</strong><span data-desc v-text='openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
+  <strong>知识点列表</strong><span data-desc v-text='vProps.openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
 </template>
 
 - Python 基础教程
