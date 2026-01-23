@@ -12,7 +12,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 ![only_http](/assets/images/wp/2025/week3/web_mygo_only_http.png)
 
-扫描目录发现有 `flag.php`，直接访问 403，尝试 SSRF 访问 `/index.php?proxy=http://127.0.0.1/flag.php`
+dirsearch 扫描目录发现有 `flag.php`，直接访问 403，尝试 SSRF 访问 `/index.php?proxy=http://127.0.0.1/flag.php`
 
 得到源码
 
