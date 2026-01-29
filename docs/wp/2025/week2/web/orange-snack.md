@@ -16,6 +16,8 @@ import Container from '@/components/docs/Container.vue'
 > [!INFO]
 > 本来是想通过社会工程学密码生成器生成弱密码爆破登录，但是觉得有点偏题了，干脆直奔考点吧整体其实就是 Python 脚本的编写，如果部分同学有爬虫的基础，那这道题只能是轻轻又松松建议提前了解知识点：HTTP 协议包括请求及响应基本格式内容（Week1 中你们已经学习）、Python 的基本语法和 requests 库基本用法、正则表达式模块当然如果你喜欢用别的代码语言或模块，请随意
 
+## 收集信息
+
 <kbd>F12</kbd> 查看提示
 
 ```html
@@ -32,7 +34,7 @@ import Container from '@/components/docs/Container.vue'
 
 在我们的 web 网页中，一些动态数据是通过特定的路由来传递数据，我们需要清楚各个路由的作用，以此构建脚本内容，显然 Doro 给了我们提示。<span data-desc>（从后面的解题情况来看，这个提示多此一举了）</span>
 
----
+## 编写解题脚本
 
 假设你已经掌握了 Week1 学习的 HTTP 协议相关知识，那么服务器验证每个用户的登录凭据就是叫 Cookie🍪 的东西，我们抓个包来看看。
 

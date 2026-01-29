@@ -20,10 +20,10 @@ $stmt->send_long_data(1, $content);
 $stmt->execute();
 ```
 
-**分析**：
+我们发现：
 
-1. **存储机制**：用户上传的文件内容（`content`）和文件名（`filename`）被直接存入了 MySQL 数据库，而不是保存在 Web 服务器的磁盘目录中。
-2. **无法解析**：既然文件在数据库里，Apache/Nginx 就无法直接访问和解析它。这意味着我们就算上传了木马，也没法直接通过 URL 访问来触发执行。
+1. 用户上传的文件内容（content）和文件名（filename）被直接存入了 MySQL 数据库，而不是保存在 Web 服务器的磁盘目录中。
+2. 既然文件在数据库里，Apache/Nginx 就无法直接访问和解析它。这意味着我们就算上传了木马，也没法直接通过 URL 访问来触发执行。
 
 ### SQL 注入 (`getFileList.php`)
 
@@ -42,12 +42,9 @@ $sql = "SELECT id, filename, upload_time FROM uploads ORDER BY $order";
 $result = $mysqli->query($sql);
 ```
 
-**分析**：
+这里 `preg_match("/upload_time|id/", $order)` 这个正则表达式的意思是：只要字符串中 **包含** `upload_time` 或 `id` 就能通过检查。
 
-1. **正则逻辑漏洞**：`preg_match("/upload_time|id/", $order)` 这个正则表达式的意思是：只要字符串中 **包含** `upload_time` 或 `id` 就能通过检查。
-2. **利用方式**：它没有使用 `^` 和 `$` 来限制字符串的开头和结尾。这意味着我们可以输入 `upload_time; [恶意SQL]`，只要保留 `upload_time` 这个关键词，后面就可以跟随任意 SQL 语句。这是一个典型的 **SQL 注入漏洞**。
-
----
+这意味着我们可以构造 `upload_time; [恶意SQL]`，只要保留 `upload_time` 这个关键词，后面就可以跟随任意 SQL 语句，达成 SQL 注入。
 
 ## 利用 SQL 写文件
 
@@ -60,8 +57,6 @@ $result = $mysqli->query($sql);
 1. **数据投毒**：利用 `upload.php`，将我们的 Webshell 代码伪装成 **文件名** 存入数据库。
 2. **导出文件**：利用 `getFileList.php` 的注入点，执行 `INTO OUTFILE`，将包含 Webshell 代码的数据库记录导出到 Web 目录下的 `.php` 文件中。
 3. **Get Flag**：访问生成的 PHP 文件，执行系统命令。
-
----
 
 ## 攻击
 
@@ -83,8 +78,7 @@ $result = $mysqli->query($sql);
 根据正则要求（必须包含 `upload_time`），URL 参数应为：
 `?order=upload_time INTO OUTFILE '/var/www/html/shell.php'`
 
-**执行操作**：
-直接在浏览器地址栏访问以下 URL（注意空格和引号的 URL 编码）：
+### Exploit
 
 ```url
 /src/getFileList.php?order=upload_time%20INTO%20OUTFILE%20%27/var/www/html/shell.php%27
@@ -92,4 +86,4 @@ $result = $mysqli->query($sql);
 
 如果页面没有报错，说明 SQL 执行成功。此时 MySQL 会把整张表的数据（包含我们刚才上传的恶意文件名）全部写入到 `shell.php` 中。
 
-这个时候就可以利用 `shell.php` 运行 /readFlag 拿到 flag 了。
+这个时候就可以利用 `shell.php` 运行 `/readFlag` 拿到 flag 了。

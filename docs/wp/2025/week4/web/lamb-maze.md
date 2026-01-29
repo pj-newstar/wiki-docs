@@ -20,7 +20,7 @@ if ($_GET["ma_ze.path"]){
 
 如果我们直接尝试传入 `?ma_ze.path=123` 会发现实际上没有反应
 
-这是因为 php 会将变量名中的点和空格等字符解析为下划线
+这是因为 PHP 会将变量名中的点和空格等字符解析为下划线
 
 [https://www.php.net/manual/zh/language.variables.external.php](https://www.php.net/manual/zh/language.variables.external.php)
 
@@ -30,7 +30,7 @@ if ($_GET["ma_ze.path"]){
 
 同样的，`[` 也是一个会被转换为 `_` 的符号
 
-但是在 php 版本小于 8 时，中括号 `[` 被转换成下划线 `_` 的行为会导致转换错误，使得接下来如果该参数名中还有 `非法字符` 并不会继续转换成下划线 `_`
+但是在 PHP 版本小于 8 时，中括号 `[` 被转换成下划线 `_` 的行为会导致转换错误，使得接下来如果该参数名中还有 `非法字符` 并不会继续转换成下划线 `_`
 
 ![image](/assets/images/wp/2025/week4/lamb/XlFnbbXTgoJarfxXiticYowznHd.png)
 
@@ -42,11 +42,11 @@ if ($_GET["ma_ze.path"]){
 
 ## 反序列化
 
-下面在对反序列化部分进行分析之前，我们先来了解一下 php 反序列化
+下面在对反序列化部分进行分析之前，我们先来了解一下 PHP 反序列化
 
-### php 反序列化基础
+### PHP 反序列化基础
 
-**序列化（Serialization）**是指将数据结构或对象的状态转换为可以存储（如保存到文件、数据库）或传输（如通过网络发送）的格式的过程。反序列化则是这个过程的逆过程。
+**序列化（Serialization）** 是指将数据结构或对象的状态转换为可以存储（如保存到文件、数据库）或传输（如通过网络发送）的格式的过程。反序列化则是这个过程的逆过程。
 
 在 php 中，序列化和反序列化分别通过 `serialize()` 函数和 `unserialize()` 函数进行
 
@@ -113,11 +113,11 @@ object(test)#2 (1) {
 
 ### 魔术方法
 
-php 为类设计了一系列的特殊方法，这些方法不需要被显式调用，而是在特殊事件发生时自动触发
+PHP 为类设计了一系列的特殊方法，这些方法不需要被显式调用，而是在特殊事件发生时自动触发
 
 它们一般是由 `__` 双下划线开头的
 
-```
+```plaintext
 __construct()          //对象创建(new)时会自动调用。
 __wakeup()             //使用unserialize时触发
 __sleep()              //使用serialize时触发
@@ -239,9 +239,9 @@ class endPoint{
 }
 ```
 
-这就是我们的漏洞点，只需要使用 php filter 伪协议读取文件即可
+这就是我们的漏洞点，只需要使用 PHP filter 伪协议读取文件即可
 
-> 当然文件包含还有其它的利用方式，感兴趣的 uu 可以自行检索学习
+> 当然文件包含还有其它的利用方式，感兴趣的 newstars 可以自行检索学习
 
 想要调用 `__call()` 方法，我们需要调用这个类不可访问，或者是不存在的方法
 
@@ -292,16 +292,16 @@ class startPoint{
 
 > 如果你恰好卡在了 pop 链分析的某一步，走出旁边的小迷宫也能给到一些提示哦
 
-![](/assets/images/wp/2025/week4/lamb/GRitbzO7goUJWuxok6Dcoa7jnvh.png)
+![hint](/assets/images/wp/2025/week4/lamb/GRitbzO7goUJWuxok6Dcoa7jnvh.png)
 
-总之，最终的 pop 链如下
+最终的 pop 链如下
 
 ```php
 startPoint.__wakeup -> SaySomething.__invoke -> Treasure.__toString ->
 Treasure.__get -> endPoint.__call
 ```
 
-poc 如下：
+PoC 如下：
 
 > 对于 `protected` 和 `private` 属性的一些参数在本题中没有影响，因此直接改为 public 即可
 > 当然你也可以选择使用反射来进行赋值

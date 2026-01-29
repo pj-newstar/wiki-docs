@@ -8,14 +8,16 @@ import Container from '@/components/docs/Container.vue'
 
 # who'ssti
 
-本题考验 SSTI 基本功，由于没设置过滤，搜索用例通过 eval 调用就行。
+本题考验 SSTI 基本功，由于没设置过滤，搜索用例通过 `eval` 调用就行。
 
-这里由于是 flask 环境，可以利用 config 或 lipsum 等环境内的自带模块取得全局对象。
+这里由于是 flask 环境，可以利用 `config` 或 `lipsum` 等 flask 环境内的自带模块快捷地取得全局对象。
 
 <Container type='info'>
 
 Lipsum 是一个用于生成随机化 [Lorem Ipsum 文本](https://cn.lipsum.com/)的 Python 模块
 </Container>
+
+## 全部题解
 
 ```py
 {{lipsum.__globals__.__builtins__.eval("__import__('re').findall('1', '12')")}}

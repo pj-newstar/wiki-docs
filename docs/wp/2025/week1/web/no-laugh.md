@@ -15,7 +15,9 @@ import Container from '@/components/docs/Container.vue'
 
 先打开游戏随便玩玩，发现第二关目标分数 1000000，无法正常完成。
 
-但是这是一道 web 题，所以我们开始收集信息 <kbd>Ctrl</kbd> + <kbd>U</kbd> 打开源代码，发现游戏的主要逻辑在最后的 `script` 标签中，我们找到判断通关的逻辑：
+## 收集信息
+
+但是这是一道 web 题，所以我们开始收集信息 <kbd>Ctrl</kbd> + <kbd>U</kbd> 打开源代码审阅，发现游戏的主要逻辑在最后的 `script` 标签中，我们找到判断通关的逻辑：
 
 ```js
 if (score >= targetScores[currentLevel]) {
@@ -50,11 +52,13 @@ if (score >= targetScores[currentLevel]) {
 }
 ```
 
-于是我们便有了下面这些方法
+阅读代码可以知道通关时，endLevel() 会被调用，我们的分数被提交到 `flag.php`，服务器根据分数返回不同内容。
+
+## 解题
 
 法一：在浏览器控制台修改前端分数
 
-<kbd>F12</kbd> 打开控制台，输入以下代码：
+<kbd>F12</kbd> -> 打开控制台，输入以下代码：
 
 ```js
 score = 1000000; // 直接把分数改成目标值

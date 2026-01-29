@@ -2,8 +2,6 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
-WIP
-
 # 被玩坏的 AI
 
 1. 用dirsearch.py去扫发现有个robots.txt文件

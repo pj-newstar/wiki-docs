@@ -10,7 +10,7 @@ import Container from '@/components/docs/Container.vue'
 
 <Container type='info'>
 
-本题考查命令拼接的 RCE 利用。
+本题考查命令拼接注入的 RCE 利用。
 </Container>
 
 打开题目，我们得到这样一个页面。
@@ -18,13 +18,13 @@ import Container from '@/components/docs/Container.vue'
 ![dd-accelerator_1](/assets/images/wp/2025/week2/dd-accelerator_1.png)
 ![dd-accelerator_2](/assets/images/wp/2025/week2/dd-accelerator_2.png)
 
-点击开始，可以看到系统 ping 命令产生的输出。我们可以猜测，这个功能就是执行了类似下面的**系统命令**实现的。
+点击开始，可以看到系统 ping 命令产生的输出。我们可以猜测，这个功能就是将用户输入拼接，执行了类似下面的**系统命令**实现的。
 
 ```bash
 ping -c 1 127.0.0.1
 ```
 
-那么，我们想要攻入这台服务器，获取 flag，是不是可以想一想，有没有方法一行执行多个命令？有的兄弟，有的。
+那么，我们想要攻入这台服务器，获取 flag，就得找办法一行执行多个命令。
 
 ## 介绍一下 `|` 和 `&`:
 

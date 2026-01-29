@@ -13,6 +13,8 @@ import Container from '@/components/docs/Container.vue'
 本题考查前端源代码分析、PHP 函数理解及绕过技巧。
 </Container>
 
+## 收集信息
+
 进入后是一个前端小页面，会发现直接<kbd>F12</kbd>或者右键是没办法打开开发者工具的，这里提供几种办法查看源代码
 
 1. 先开启开发者工具再访问网站
@@ -43,6 +45,8 @@ if(isset($_POST['newstar2025'])){
     }
 }
 ```
+
+## 绕过
 
 这里是想考察一下 newstar 们遇到未知函数的检索能力
 
