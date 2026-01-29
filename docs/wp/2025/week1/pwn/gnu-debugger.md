@@ -27,7 +27,7 @@ import Container from '@/components/docs/Container.vue'
 
 首先要做的就是开启题目容器
 
-![初始容器](/assets/images/wp/2025/week1/gnu_debugger_1.png)
+![初始容器](/assets/images/wp/2025/week1/gnu-debugger_1.png)
 
 nc 后面的 `8.147.132.32` 就是 ip , 而 `39543` 则是 port，使用 `run 8.147.132.32 39543` 命令开始游戏。
 
@@ -46,7 +46,7 @@ nc 后面的 `8.147.132.32` 就是 ip , 而 `39543` 则是 port，使用 `run 8.
 1. `info r`：显示所有寄存器的值，包括 16 进制以及 10 进制
 2. `p/x $r12`：`p` 指打印，`x` 指 16 进制的形式，`$` 指后面的是寄存器
 
-![寄存器](/assets/images/wp/2025/week1/gnu_debugger_2.png)
+![寄存器](/assets/images/wp/2025/week1/gnu-debugger_2.png)
 
 复制后使用 continue 指令 `c`让程序继续执行，随后提交即可。
 
@@ -68,7 +68,7 @@ nc 后面的 `8.147.132.32` 就是 ip , 而 `39543` 则是 port，使用 `run 8.
 
 使用 `x/s 0x555555557c27` 查看对应字符串即可。
 
-![第二关](/assets/images/wp/2025/week1/gnu_debugger_3.png)
+![第二关](/assets/images/wp/2025/week1/gnu-debugger_3.png)
 
 ## 关卡 3：犹豫丁真
 

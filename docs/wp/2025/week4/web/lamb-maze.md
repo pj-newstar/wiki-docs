@@ -24,21 +24,21 @@ if ($_GET["ma_ze.path"]){
 
 [https://www.php.net/manual/zh/language.variables.external.php](https://www.php.net/manual/zh/language.variables.external.php)
 
-![image](/assets/images/wp/2025/week4/lamb/OwpMbXs4cow8QmxdFxocYuBJnAc.png)
+![image](/assets/images/wp/2025/week4/lamb-maze_1.png)
 
-![image](/assets/images/wp/2025/week4/lamb/NxZwb8bVmot9grxdn26clAyGnMc.png)
+![image](/assets/images/wp/2025/week4/lamb-maze_2.png)
 
 同样的，`[` 也是一个会被转换为 `_` 的符号
 
 但是在 PHP 版本小于 8 时，中括号 `[` 被转换成下划线 `_` 的行为会导致转换错误，使得接下来如果该参数名中还有 `非法字符` 并不会继续转换成下划线 `_`
 
-![image](/assets/images/wp/2025/week4/lamb/XlFnbbXTgoJarfxXiticYowznHd.png)
+![image](/assets/images/wp/2025/week4/lamb-maze_3.png)
 
 可以看见在 [php8 对这个 bug 修复的 commit](https://github.com/php/php-src/commit//fc4d462e947828fdbeac6020ac8f34704a218834?branch=fc4d462e947828fdbeac6020ac8f34704a218834&diff=unified) 中，原来的逻辑是只对 `[` 进行了一次替换，因此导致了这个问题
 
 所以这里我们只需要传入 `ma[ze.path=123` 即可绕过
 
-![image](/assets/images/wp/2025/week4/lamb/HSIVb8fRCoQ3DcxVw78cc7NTnDO.png)
+![image](/assets/images/wp/2025/week4/lamb-maze_4.png)
 
 ## 反序列化
 
@@ -292,7 +292,7 @@ class startPoint{
 
 > 如果你恰好卡在了 pop 链分析的某一步，走出旁边的小迷宫也能给到一些提示哦
 
-![hint](/assets/images/wp/2025/week4/lamb/GRitbzO7goUJWuxok6Dcoa7jnvh.png)
+![hint](/assets/images/wp/2025/week4/lamb-maze_5.png)
 
 最终的 pop 链如下
 
@@ -346,4 +346,4 @@ echo urlencode(serialize($startPoint))."<br>\n";
 echo base64_encode(serialize($startPoint))."<br>\n";
 ```
 
-![image](/assets/images/wp/2025/week4/lamb/JorTbkNB9oUrs1xiNpyc2YV9nxe.png)
+![image](/assets/images/wp/2025/week4/lamb-maze_6.png)

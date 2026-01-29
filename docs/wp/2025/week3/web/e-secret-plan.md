@@ -12,7 +12,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 `git reflog` 会显示所有引用（HEAD、分支等）的移动历史，包括切换、合并和删除操作。
 
-![reflog](/assets/images/wp/2025/week3/web_e_reflog.png)
+![reflog](/assets/images/wp/2025/week3/e-secret-plan_1.png)
 
 我们可以看到有一个叫做 `test` 的分支被删除了，可以优先恢复并排查。
 
@@ -41,6 +41,6 @@ function getUserData() {
 
 下载 `.DS_Store` 文件后，尝试利用 [ds_store_exp](https://github.com/lijiejie/ds_store_exp) 工具还原信息。
 
-![dsstore](/assets/images/wp/2025/week3/web_e_dsstore.png)
+![dsstore](/assets/images/wp/2025/week3/e-secret-plan_2.png)
 
 得到 flag 地址，访问获得最终 flag。

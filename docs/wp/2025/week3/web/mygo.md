@@ -6,11 +6,11 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 ~~先演奏一下春日影~~，抓几个包，发现有一个未过滤的 proxy，可能可以打 SSRF。
 
-![console](/assets/images/wp/2025/week3/web_mygo_console.png)
+![console](/assets/images/wp/2025/week3/mygo_1.png)
 
 尝试发现只允许 http 协议
 
-![only_http](/assets/images/wp/2025/week3/web_mygo_only_http.png)
+![only_http](/assets/images/wp/2025/week3/mygo_2.png)
 
 dirsearch 扫描目录发现有 `flag.php`，直接访问 403，尝试 SSRF 访问 `/index.php?proxy=http://127.0.0.1/flag.php`
 
