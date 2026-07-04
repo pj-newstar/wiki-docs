@@ -11,11 +11,11 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 访问网站，<kbd>F12</kbd> 查看前端源码发现
 
-```html
+```
 flag is in flag.php   ---说明flag在flag.php
 ```
 
-```html
+```
 HINT: c29tZXRoaW5nX2lzX2luXy91cGxvYWRzLw==
 base64解码：something_is_in_/uploads/
 ```
