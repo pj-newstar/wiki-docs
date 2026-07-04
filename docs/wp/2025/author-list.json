@@ -1,0 +1,884 @@
+{
+  "week1": [
+    {
+      "name": "Pwn's Door",
+      "category": "Pwn",
+      "author": "Findkey",
+      "inspectors": ["L1nk", "Sally", "sysNow"]
+    },
+    {
+      "name": "GNU Debugger",
+      "category": "Pwn",
+      "author": "L1nk",
+      "inspectors": ["s1eepy", "KAMIYA"]
+    },
+    {
+      "name": "INTbug",
+      "category": "Pwn",
+      "author": "s1eepy",
+      "inspectors": ["sysNow", "daimi", "L1nk"]
+    },
+    {
+      "name": "overflow",
+      "category": "Pwn",
+      "author": "Sally",
+      "inspectors": ["sysNow", "Findkey", "s1eepy"]
+    },
+    {
+      "name": "input_function",
+      "category": "Pwn",
+      "author": "sysNow",
+      "inspectors": ["Findkey", "L1nk", "Sally"]
+    },
+    {
+      "name": "X0r",
+      "category": "Reverse",
+      "author": "Eleven.",
+      "inspectors": ["Sh4mar3", "KAMIYA"]
+    },
+    {
+      "name": "EzMyDroid",
+      "category": "Reverse",
+      "author": "PangBai",
+      "inspectors": ["KAMIYA"]
+    },
+    {
+      "name": "Puzzle",
+      "category": "Reverse",
+      "author": "Eleven.",
+      "inspectors": ["KAMIYA"]
+    },
+    {
+      "name": "plzdebugme",
+      "category": "Reverse",
+      "author": "Samsara",
+      "inspectors": ["AstralPrisma", "KAMIYA", "Sh4mar3"]
+    },
+    {
+      "name": "Strange Base",
+      "category": "Reverse",
+      "author": "JSnow",
+      "inspectors": ["KAMIYA"]
+    },
+    {
+      "name": "别笑，你也过不了第二关",
+      "category": "Web",
+      "author": "rea1ity",
+      "inspectors": ["xNftrOne", "wsh_", "归茛"]
+    },
+    {
+      "name": "宇宙的中心是 PHP",
+      "category": "Web",
+      "author": "xNftrOne",
+      "inspectors": ["Anchovy", "KAMIYA", "Cnily03"]
+    },
+    {
+      "name": "multi-headach3",
+      "category": "Web",
+      "author": "D0ubleD",
+      "inspectors": ["Anchovy", "KAMIYA", "Cnily03"]
+    },
+    {
+      "name": "strange_login",
+      "category": "Web",
+      "author": "D0ubleD",
+      "inspectors": ["KAMIYA", "Qu43ter", "L4ne"]
+    },
+    {
+      "name": "黑客小 W 的故事（1）",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["Anchovy", "Qu43ter", "wsh_"]
+    },
+    {
+      "name": "我真得控制你了",
+      "category": "Web",
+      "author": "yunmeng",
+      "inspectors": ["KAMIYA", "wsh_", "xNftrOne"]
+    },
+    {
+      "name": "初识 RSA",
+      "category": "Crypto",
+      "author": "Hanson",
+      "inspectors": ["Cathylin"]
+    },
+    {
+      "name": "随机数之旅 1",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["L1nk", "Hanson"]
+    },
+    {
+      "name": "SageMath 使用指南",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["L1nk", "Hanson"]
+    },
+    {
+      "name": "唯一表示",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["willyz", "Hanson"]
+    },
+    {
+      "name": "小跳蛙",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["L1nk", "Hanson", "KAMIYA"]
+    },
+    {
+      "name": "Sign in",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": []
+    },
+    {
+      "name": "我不要革命失败",
+      "category": "Misc",
+      "author": "kndye",
+      "inspectors": ["xNftrOne", "Mrsh", "KAMIYA"]
+    },
+    {
+      "name": "Misc 城邦：压缩术",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["xNftrOne", "Mrsh"]
+    },
+    {
+      "name": "OSINT：天空 belong",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["KAMIYA", "Mrsh"]
+    },
+    {
+      "name": "EZ_fence",
+      "category": "Misc",
+      "author": "Muzhi",
+      "inspectors": ["Daybreak", "kndye", "Mrsh"]
+    },
+    {
+      "name": "前有文字，所以搜索很有用",
+      "category": "Misc",
+      "author": "miko",
+      "inspectors": ["xNftrOne", "Mrsh", "KAMIYA"]
+    }
+  ],
+  "week2": [
+    {
+      "name": "刻在栈里的秘密",
+      "category": "Pwn",
+      "author": "L1nk",
+      "inspectors": ["sysNow", "Sally", "KAMIYA"]
+    },
+    {
+      "name": "no shell",
+      "category": "Pwn",
+      "author": "Findkey",
+      "inspectors": ["sysNow", "s1eepy", "Sally"]
+    },
+    {
+      "name": "syscall",
+      "category": "Pwn",
+      "author": "s1eepy",
+      "inspectors": ["sysNow", "L1nk", "Sally"]
+    },
+    {
+      "name": "input_small_function",
+      "category": "Pwn",
+      "author": "sysNow",
+      "inspectors": ["L1nk", "s1eepy", "Sally"]
+    },
+    {
+      "name": "calc_beta",
+      "category": "Pwn",
+      "author": "daimi",
+      "inspectors": ["s1eepy", "KAMIYA"]
+    },
+    {
+      "name": "尤皮·埃克斯历险记（1）",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["JSnow", "KAMIYA"]
+    },
+    {
+      "name": "采一朵花，送给艾达（1）",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["Azusaq", "KAMIYA"]
+    },
+    {
+      "name": "Forgotten_Code",
+      "category": "Reverse",
+      "author": "Azusaq",
+      "inspectors": ["KAMIYA"]
+    },
+    {
+      "name": "Look at me carefully",
+      "category": "Reverse",
+      "author": "JSnow",
+      "inspectors": ["KAMIYA"]
+    },
+    {
+      "name": "OhNativeEnc",
+      "category": "Reverse",
+      "author": "PangBai",
+      "inspectors": ["Azusaq", "KAMIYA"]
+    },
+    {
+      "name": "真的是签到诶",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["xNftrOne"]
+    },
+    {
+      "name": "搞点哦润吉吃吃🍊",
+      "category": "Web",
+      "author": "Qu43ter",
+      "inspectors": ["KAMIYA", "Anchovy", "wsh_"]
+    },
+    {
+      "name": "DD 加速器",
+      "category": "Web",
+      "author": "D0ubleD",
+      "inspectors": ["Anchovy", "KAMIYA", "wsh_"]
+    },
+    {
+      "name": "白帽小 K 的故事（1）",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["wsh_", "xNftrOne", "ENOCH"]
+    },
+    {
+      "name": "小 E 的管理系统",
+      "category": "Web",
+      "author": "ENOCH",
+      "inspectors": ["KAMIYA", "wsh_"]
+    },
+    {
+      "name": "DLP_1",
+      "category": "Crypto",
+      "author": "Hanson",
+      "inspectors": ["Cathylin"]
+    },
+    {
+      "name": "FHE: 0&1",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["Hanson"]
+    },
+    {
+      "name": "群论小测试",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "置换",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["Hanson"]
+    },
+    {
+      "name": "RSA_revenge",
+      "category": "Crypto",
+      "author": "Hanson",
+      "inspectors": ["Cathylin"]
+    },
+    {
+      "name": "美妙的音乐",
+      "category": "Misc",
+      "author": "AstralPrisma",
+      "inspectors": ["Mrsh", "miko", "willyz"]
+    },
+    {
+      "name": "日志分析：不敬者的闯入",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["miko"]
+    },
+    {
+      "name": "OSINT：威胁情报",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["Mrsh", "miko"]
+    },
+    {
+      "name": "星期四的狂想",
+      "category": "Misc",
+      "author": "KAMIYA",
+      "inspectors": ["miko", "Mrsh"]
+    },
+    {
+      "name": "Misc 城邦：NewKeyboard",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["miko", "Mrsh"]
+    }
+  ],
+  "week3": [
+    {
+      "name": "fmt&canary",
+      "category": "Pwn",
+      "author": "L1nk",
+      "inspectors": ["s1eepy", "Zeriah"]
+    },
+    {
+      "name": "sandbox_plus",
+      "category": "Pwn",
+      "author": "sysNow",
+      "inspectors": ["L1nk", "s1eepy", "Zeriah"]
+    },
+    {
+      "name": "小的明？题问",
+      "category": "Pwn",
+      "author": "daimi",
+      "inspectors": []
+    },
+    {
+      "name": "calc_meow",
+      "category": "Pwn",
+      "author": "daimi",
+      "inspectors": []
+    },
+    {
+      "name": "only_read",
+      "category": "Pwn",
+      "author": "Sally",
+      "inspectors": ["Findkey"]
+    },
+    {
+      "name": "pyz3",
+      "category": "Reverse",
+      "author": "Azusaq",
+      "inspectors": ["AstralPrisma"]
+    },
+    {
+      "name": "采一朵花，送给艾达（2）",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["JSnow", "Azusaq"]
+    },
+    {
+      "name": "谁改了我的密钥啊",
+      "category": "Reverse",
+      "author": "PangBai",
+      "inspectors": ["Azusaq"]
+    },
+    {
+      "name": "尤皮·埃克斯历险记（2）",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["Azusaq"]
+    },
+    {
+      "name": "Dancing Functions",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": []
+    },
+    {
+      "name": "小 E 的秘密计划",
+      "category": "Web",
+      "author": "ENOCH",
+      "inspectors": ["xNftrOne", "wsh_", "归茛"]
+    },
+    {
+      "name": "ez-chain",
+      "category": "Web",
+      "author": "D0ubleD",
+      "inspectors": ["xNftrOne", "归茛", "KAMIYA"]
+    },
+    {
+      "name": "MyGO!!!",
+      "category": "Web",
+      "author": "rea1ity",
+      "inspectors": ["wsh_", "KAMIYA", "xNftrOne"]
+    },
+    {
+      "name": "白帽小 K 的故事（2）",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["ENOCH", "wsh_", "D0ubleD"]
+    },
+    {
+      "name": "mirror_gate",
+      "category": "Web",
+      "author": "Icesugar",
+      "inspectors": ["KAMIYA", "xNftrOne", "wsh_"]
+    },
+    {
+      "name": "who'ssti",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["wsh_", "Icesugar", "D0ubleD"]
+    },
+    {
+      "name": "CBC 之舞",
+      "category": "Crypto",
+      "author": "gloriablack",
+      "inspectors": ["Hanson"]
+    },
+    {
+      "name": "被泄露的素数",
+      "category": "Crypto",
+      "author": "gloriablack",
+      "inspectors": ["Hanson"]
+    },
+    {
+      "name": "欧皇的生日",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["gloriablack", "Hanson", "KAMIYA"]
+    },
+    {
+      "name": "随机数之旅 3",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["Hanson"]
+    },
+    {
+      "name": "GCL",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["Hanson"]
+    },
+    {
+      "name": "流量分析：S7 的秘密",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": []
+    },
+    {
+      "name": "日志分析：盲辨海豚",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["miko", "Mrsh"]
+    },
+    {
+      "name": "内存取证：Windows 篇",
+      "category": "Misc",
+      "author": "miko",
+      "inspectors": ["willyz"]
+    },
+    {
+      "name": "区块链：以太坊的约定",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": []
+    },
+    {
+      "name": "jail-evil eval",
+      "category": "Misc",
+      "author": "KAMIYA",
+      "inspectors": ["yuro"]
+    }
+  ],
+  "week4": [
+    {
+      "name": "fmt&got",
+      "category": "Pwn",
+      "author": "L1nk",
+      "inspectors": ["daimi", "Findkey", "Zeriah"]
+    },
+    {
+      "name": "海市蜃楼",
+      "category": "Pwn",
+      "author": "daimi",
+      "inspectors": ["Findkey", "sysNow", "Sally"]
+    },
+    {
+      "name": "memory",
+      "category": "Pwn",
+      "author": "sysNow",
+      "inspectors": ["Zeriah", "Findkey", "L1nk"]
+    },
+    {
+      "name": "calc_queen",
+      "category": "Pwn",
+      "author": "daimi",
+      "inspectors": ["Findkey"]
+    },
+    {
+      "name": "content",
+      "category": "Pwn",
+      "author": "ishmael",
+      "inspectors": ["daimi"]
+    },
+    {
+      "name": "NOT_TUI",
+      "category": "Reverse",
+      "author": "Azusaq",
+      "inspectors": ["AstralPrisma", "JSnow"]
+    },
+    {
+      "name": "PleaseHookMe",
+      "category": "Reverse",
+      "author": "PangBai",
+      "inspectors": []
+    },
+    {
+      "name": "尤皮·埃克斯历险记（3）",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["JSnow"]
+    },
+    {
+      "name": "Dancing Keys",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["Azusaq", "JSnow"]
+    },
+    {
+      "name": "ezrust",
+      "category": "Reverse",
+      "author": "Azusaq",
+      "inspectors": ["JSnow"]
+    },
+    {
+      "name": "SSTI 在哪里？",
+      "category": "Web",
+      "author": "wsh_",
+      "inspectors": ["JohnSmith", "ENOCH", "L4ne"]
+    },
+    {
+      "name": "武功秘籍",
+      "category": "Web",
+      "author": "yuhua",
+      "inspectors": ["KAMIYA", "D0ubleD", "L4ne"]
+    },
+    {
+      "name": "小 E 的留言板",
+      "category": "Web",
+      "author": "ENOCH",
+      "inspectors": ["KAMIYA", "wsh_", "D0ubleD"]
+    },
+    {
+      "name": "小羊走迷宫",
+      "category": "Web",
+      "author": "xNftrOne",
+      "inspectors": ["wsh_", "KAMIYA", "D0ubleD"]
+    },
+    {
+      "name": "sqlupload",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["D0ubleD", "wsh_"]
+    },
+    {
+      "name": "独一无二",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["KAMIYA", "Hanson"]
+    },
+    {
+      "name": "随机数之旅 4",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": ["KAMIYA", "Hanson", "Icesugar"]
+    },
+    {
+      "name": "共轭迷宫",
+      "category": "Crypto",
+      "author": "gloriablack",
+      "inspectors": ["KAMIYA", "Hanson"]
+    },
+    {
+      "name": "三重密钥锁",
+      "category": "Crypto",
+      "author": "gloriablack",
+      "inspectors": []
+    },
+    {
+      "name": "天虫的秘密",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "流量分析：听声辩位",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["miko", "Mrsh"]
+    },
+    {
+      "name": "区块链：智能合约",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["KAMIYA", "miko", "Mrsh"]
+    },
+    {
+      "name": "jail-Neuro jail",
+      "category": "Misc",
+      "author": "KAMIYA",
+      "inspectors": ["miko", "willyz", "Mrsh"]
+    },
+    {
+      "name": "混乱的网站",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["KAMIYA", "miko", "Mrsh"]
+    },
+    {
+      "name": "应急响应：初识",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["miko"]
+    }
+  ],
+  "week5": [
+    {
+      "name": "复读机堂堂归来！复读机堂堂归来！",
+      "category": "Pwn",
+      "author": "L1nk",
+      "inspectors": ["daimi", "Zeriah"]
+    },
+    {
+      "name": "note",
+      "category": "Pwn",
+      "author": "sysNow",
+      "inspectors": ["Sally", "L1nk", "Zeriah"]
+    },
+    {
+      "name": "stdout",
+      "category": "Pwn",
+      "author": "L1nk",
+      "inspectors": []
+    },
+    {
+      "name": "go?",
+      "category": "Pwn",
+      "author": "ishmael",
+      "inspectors": []
+    },
+    {
+      "name": "Pwn the world",
+      "category": "Pwn",
+      "author": "daimi",
+      "inspectors": []
+    },
+    {
+      "name": "魔法少女的秘密",
+      "category": "Reverse",
+      "author": "PangBai",
+      "inspectors": []
+    },
+    {
+      "name": "天才的「认证」",
+      "category": "Reverse",
+      "author": "yuro",
+      "inspectors": ["AstralPrisma"]
+    },
+    {
+      "name": "AnEasySystem",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["AstralPrisma", "Azusaq"]
+    },
+    {
+      "name": "Jvav Master",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": []
+    },
+    {
+      "name": "河图洛书",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": ["Azusaq"]
+    },
+    {
+      "name": "被玩坏的 AI",
+      "category": "Web",
+      "author": "归茛",
+      "inspectors": ["xNftrOne", "D0ubleD", "wsh_"]
+    },
+    {
+      "name": "废弃的网站",
+      "category": "Web",
+      "author": "sanjio",
+      "inspectors": ["D0ubleD", "wsh_"]
+    },
+    {
+      "name": "小 W 和小 K 的故事（最终章）",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["D0ubleD", "wsh_"]
+    },
+    {
+      "name": "眼熟的计算器",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": ["D0ubleD", "wsh_"]
+    },
+    {
+      "name": "Binary Blog",
+      "category": "Web",
+      "author": "归茛",
+      "inspectors": ["D0ubleD"]
+    },
+    {
+      "name": "不给你看喵",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "BLS 多重签名：零的裂变",
+      "category": "Crypto",
+      "author": "gloriablack",
+      "inspectors": []
+    },
+    {
+      "name": "Poly",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "Smile 盒",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "区块链：INTbug",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": ["miko"]
+    },
+    {
+      "name": "应急响应：把你 mikumiku 掉（1）",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": []
+    },
+    {
+      "name": "应急响应：把你 mikumiku 掉（2）",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": []
+    },
+    {
+      "name": "应急响应：把你 mikumiku 掉（3）",
+      "category": "Misc",
+      "author": "willyz",
+      "inspectors": []
+    },
+    {
+      "name": "AI HACKER",
+      "category": "Misc",
+      "author": "Mrsh",
+      "inspectors": []
+    },
+    {
+      "name": "TIME HACKER",
+      "category": "Misc",
+      "author": "Mrsh",
+      "inspectors": ["miko"]
+    }
+  ],
+  "extras": [
+    {
+      "name": "llama-pwn",
+      "category": "Pwn",
+      "author": "Th3S",
+      "inspectors": []
+    },
+    {
+      "name": "Not Symmetric",
+      "category": "Reverse",
+      "author": "AstralPrisma",
+      "inspectors": []
+    },
+    {
+      "name": "who'ssti revenge",
+      "category": "Web",
+      "author": "KAMIYA",
+      "inspectors": []
+    },
+    {
+      "name": "黑盒 1",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "混沌密码学入门",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "简约但不简单",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "随机数之旅 1.3",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "随机数之旅 1.9",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "随机数之旅 2",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "随机数之旅 3.6",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "随机数之旅 3.9",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "运气与实力",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "置换 DLP",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "DLP",
+      "category": "Crypto",
+      "author": "Hanson",
+      "inspectors": []
+    },
+    {
+      "name": "final_R",
+      "category": "Crypto",
+      "author": "Cathylin",
+      "inspectors": []
+    },
+    {
+      "name": "Weil 的噪声与秩序",
+      "category": "Crypto",
+      "author": "gloriablack",
+      "inspectors": []
+    },
+    {
+      "name": "不是所有牛奶都叫___",
+      "category": "Misc",
+      "author": "miko",
+      "inspectors": []
+    }
+  ]
+}

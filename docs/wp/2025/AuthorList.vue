@@ -6,20 +6,27 @@ import "element-plus/es/components/collapse-item/style/css";
 
 import authors from "./author-list.json";
 
+const modifiedAuthors = Object.fromEntries(
+  Object.entries(authors).map(([key, value]) => {
+    return [key, value.map((item) => ({ ...item, inspectors: item.inspectors.join(", ") }))];
+  })
+);
+
 const vprops = withDefaults(
   defineProps<{
     keys?: string[];
     title_tmpl?: (key: string) => string;
-    lables?: [string, string, string];
-    props?: [string, string, string];
+    lables?: [string, string, string, string];
+    props?: [string, string, string, string];
   }>(),
   {
     keys: () => Object.keys(authors),
     title_tmpl: (key: string) => {
+      if (key === "extras") return "挑战题";
       return `Week ${key.replace(/[^\d]/g, "")}`;
     },
-    lables: () => ["题目名称", "方向", "出题人"],
-    props: () => ["name", "category", "author"],
+    lables: () => ["题目名称", "方向", "出题人", "验题人"],
+    props: () => ["name", "category", "author", "inspectors"],
   }
 );
 
@@ -31,10 +38,11 @@ const vprops = withDefaults(
     <ElCollapseItem :name="`author-list-${i}`">
       <template #title>{{ title_tmpl(keys[i - 1]) }}</template>
 
-      <ElTable :data="authors[keys[i - 1] as keyof typeof authors]" stripe style="width: 100%">
+      <ElTable :data="modifiedAuthors[keys[i - 1] as keyof typeof modifiedAuthors]" stripe style="width: 100%">
         <ElTableColumn :prop="props[0]" :label="lables[0]" />
         <ElTableColumn :prop="props[1]" :label="lables[1]" width="180" />
         <ElTableColumn :prop="props[2]" :label="lables[2]" width="180" />
+        <ElTableColumn :prop="props[3]" :label="lables[3]" />
       </ElTable>
     </ElCollapseItem>
   </ElCollapse>
