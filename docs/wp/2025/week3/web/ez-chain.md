@@ -4,7 +4,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 # ez-chain
 
-> 碎碎念：本来想考filter_chain所以才取这个名字，大改之后其实不需要多个过滤器组成chain来着...
+> 碎碎念：本来想考 `filter_chain` 所以才取这个名字，大改之后其实不需要多个过滤器组成 chain 来着……
 
 ```php
 <?php

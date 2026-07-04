@@ -8,7 +8,7 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 dirsearch 扫描发现有个 `robots.txt` 文件，内容如下
 
-```txt
+```plaintext
 User-agent: *
 Allow: /find.php
 
@@ -48,12 +48,12 @@ Disallow: /RPO/
 
 `// Hint: Admin is Admin only,but Are you Admin?`
 
-这就是想要得到 flag，就需要满足 `X-Admin\:Admin`
+也就是说，想要得到 FLAG，就需要满足 `X-Admin\:Admin`。
 
 通过输入
 
-```txt
+```plaintext
 TestUA%0d%0aX-Admin: Admin
 ```
 
-进行 CRLF 注入得到 flag
+进行 CRLF 注入得到 FLAG。

@@ -8,65 +8,65 @@ import Container from '@/components/docs/Container.vue'
 
 # 武功秘籍
 
-## 前言
-
 <Container type='info'>
 
-本题主要考察对于 CVE 的搜查能力，并将其运用在具体的实战场景中
+本题主要考查 CVE 信息检索与漏洞利用能力。
 </Container>
 
-![image-20251030201842810](/assets/images/wp/2025/week4/kungfu-manual_1.png)
+## 前置分析
 
-看题目描述可以看到很多有效信息，如 CMS、CVE 等等，这时候就可以了解 CVE 是什么
+![题目描述中的 CMS 和 CVE 信息](/assets/images/wp/2025/week4/kungfu-manual_1.png)
 
-![image-20251030205841812](/assets/images/wp/2025/week4/kungfu-manual_2.png)
+题目描述提供了 CMS、CVE 等有效信息，可以据此检索漏洞资料。
 
-除了 CVE 之外，国外的 NVD 和国内的 CNVD, CNNVD 也是相同的，遇到漏洞的时候记得可以上网搜一下有没有对应的 CVE，再搜搜有没有对应的 PoC，如果有 PoC 那这个漏洞就可以轻松攻破。
+![CVE 资料检索结果](/assets/images/wp/2025/week4/kungfu-manual_2.png)
 
-![image-20251030210743979](/assets/images/wp/2025/week4/kungfu-manual_3.png)
+除 CVE 之外，NVD、CNVD、CNNVD 等漏洞库也可以作为检索入口。遇到已知漏洞时，可以先确认是否存在对应 CVE，再检索是否有公开 PoC。
 
-进入题目可以先看到这个，通过观察发现这是一个名叫 `dcrcms` 的 CMS 系统，上网搜一下这一个系统有没有漏洞
+![DcrCMS 题目页面](/assets/images/wp/2025/week4/kungfu-manual_3.png)
 
-![image-20251031151907312](/assets/images/wp/2025/week4/kungfu-manual_4.png)
+进入题目后，可以通过页面特征确认这是 DcrCMS 系统，随后检索该系统的公开漏洞。
 
-好的，很快就可以看出来，随便选择一篇博客，然后按博客所写的方法进行漏洞渗透就好了
+![DcrCMS 漏洞利用资料](/assets/images/wp/2025/week4/kungfu-manual_4.png)
 
-## 以下是正式 WP
+检索后可以找到相关漏洞利用文章，按其中步骤进行验证即可。
 
-进入靶机后访问 `/dcr/login.htm`，发现登录界面，<kbd>F12</kbd> 打开可以看到注释
+## 解题过程
 
-![image-20251031152456572](/assets/images/wp/2025/week4/kungfu-manual_5.png)
+进入靶机后访问 `/dcr/login.htm`，发现登录界面，按 <kbd>F12</kbd> 可以看到注释。
 
-说明要弱密码爆破，爆破用 burpsuite 就行，有其他的爆破工具也行，总之最后的账户密码为 admin/admin
+![登录页面注释提示](/assets/images/wp/2025/week4/kungfu-manual_5.png)
 
-![image-20251031152708845](/assets/images/wp/2025/week4/kungfu-manual_6.png)
+注释提示需要进行弱口令爆破，可以使用 Burp Suite 或其他爆破工具。最终得到账号密码为 `admin/admin`。
 
-有些人可能会被验证码吓到，认为爆破不行，实际上这个验证码是存在 session 中的，只要 session 不变这个验证码就不会变，所以可以放心大胆的爆破
+![Burp 爆破弱口令](/assets/images/wp/2025/week4/kungfu-manual_6.png)
 
-![image-20251031153612826](/assets/images/wp/2025/week4/kungfu-manual_7.png)
+验证码存储在 Session 中，只要保持同一 Session，验证码就不会变化，因此可以复用该 Session 进行爆破。
 
-进入后台后点击添加新闻类
+![验证码 Session 复用](/assets/images/wp/2025/week4/kungfu-manual_7.png)
 
-![image-20251031153657686](/assets/images/wp/2025/week4/kungfu-manual_8.png)
+进入后台后点击添加新闻类。
 
-再添加新闻
+![后台添加新闻类](/assets/images/wp/2025/week4/kungfu-manual_8.png)
 
-![image-20251031153742591](/assets/images/wp/2025/week4/kungfu-manual_9.png)
+再添加新闻。
 
-![image-20251031153805506](/assets/images/wp/2025/week4/kungfu-manual_10.png)
+![后台添加新闻](/assets/images/wp/2025/week4/kungfu-manual_9.png)
 
-这里是它的文件上传的漏洞点，抓包上传一句话木马
+![新闻内容编辑页面](/assets/images/wp/2025/week4/kungfu-manual_10.png)
 
-![image-20251031153931124](/assets/images/wp/2025/week4/kungfu-manual_11.png)
+这里是文件上传漏洞点，抓包上传一句话木马。
 
-这里改成 image/jpeg 再放行，成功后去系统管理/文件管理器，文件目录：根目录 `/uploads/news/2025_10_31`
+![文件上传抓包修改](/assets/images/wp/2025/week4/kungfu-manual_11.png)
 
-![image-20251031154337626](/assets/images/wp/2025/week4/kungfu-manual_12.png)
+将 Content-Type 改为 `image/jpeg` 后放行。上传成功后，进入「系统管理」-「文件管理器」，文件目录为根目录 `/uploads/news/2025_10_31`。
 
-然后执行任意命令即可
+![后台文件管理器定位上传文件](/assets/images/wp/2025/week4/kungfu-manual_12.png)
 
-![image-20251031154445875](/assets/images/wp/2025/week4/kungfu-manual_13.png)
+然后执行任意命令即可。
+
+![WebShell 执行命令](/assets/images/wp/2025/week4/kungfu-manual_13.png)
 
 ## 总结
 
-这是一个非常简单的一个 CVE 题目，所需要具备的是信息检索能力的知识储备能力，当发现这个系统有 CVE 漏洞的时候就可以上网去查询 CVE 信息以及 PoC，这道题当有了 PoC 之后就是一个简单的文件上传题
+本题的关键在于根据 CMS 信息检索对应 CVE 和公开 PoC。确认利用路径后，后续步骤本质上是一个文件上传漏洞利用。

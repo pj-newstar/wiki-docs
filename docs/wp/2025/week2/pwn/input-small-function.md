@@ -15,23 +15,23 @@ import Container from '@/components/docs/Container.vue'
 
 这道题目是 input_function 的延续，我们把可执行文件用 IDA 打开，查看 `main` 函数：
 
-![image-20251104182010296](/assets/images/wp/2025/week2/input-small-function_1.png)
+![IDA 查看 main 函数](/assets/images/wp/2025/week2/input-small-function_1.png)
 
 这一道题目仍然考查 shellcode，但是对读入字符数做出了限制，同时存在一个 `clear` 函数，我们查看一下 `clear` 函数的内容。
 
-![image-20251106193824042](/assets/images/wp/2025/week2/input-small-function_2.png)
+![IDA 查看 clear 函数](/assets/images/wp/2025/week2/input-small-function_2.png)
 
 看上去就只是返回了 0，但是我们看汇编代码。
 
-![image-20251106193855059](/assets/images/wp/2025/week2/input-small-function_3.png)
+![clear 函数汇编清空寄存器](/assets/images/wp/2025/week2/input-small-function_3.png)
 
 可以看到程序清空了 `rax`，`rbx`，`rcx`，`rdx`，`rdi`，`rsi`，`r8`-`r15`寄存器，因此此时程序中仅有 `rbp`，`rsp`，`rip` 三个寄存器没有被清空。
 
-![image-20251106194036494](/assets/images/wp/2025/week2/input-small-function_4.png)
+![返回 main 后设置 shellcode 地址](/assets/images/wp/2025/week2/input-small-function_4.png)
 
 随后程序返回 `main` 函数之后，将 shellcode 开始的地址放入 `rdx` 中，随后执行 `call rdx` 以执行 shellcode。
 
-![image-20251106194156440](/assets/images/wp/2025/week2/input-small-function_5.png)
+![call rdx 执行 shellcode](/assets/images/wp/2025/week2/input-small-function_5.png)
 
 由于存在 shellcode 字符数限制，因此直接使用 pwntools 生成的 shellcode 会由于长度过长而导致失败，一般情况下我们有以下的两条思路。
 

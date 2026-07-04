@@ -30,7 +30,7 @@ gopher 协议被 curl 支持，能够达成发出 GET、POST 请求的效果。
 
 注意 gopher 协议格式
 
-```url
+```plaintext
 gopher://ip:port/_后接TCP数据流 (就是经过上面1, 2步后得到的数据)
 ```
 

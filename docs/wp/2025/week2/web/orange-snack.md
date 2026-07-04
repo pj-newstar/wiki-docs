@@ -38,7 +38,7 @@ import Container from '@/components/docs/Container.vue'
 
 假设你已经掌握了 Week1 学习的 HTTP 协议相关知识，那么服务器验证每个用户的登录凭据就是叫 Cookie🍪 的东西，我们抓个包来看看。
 
-![Image](/assets/images/wp/2025/week2/orange-snack_2.png)
+![登录后的 Cookie](/assets/images/wp/2025/week2/orange-snack_2.png)
 
 要想在请求 `/home` 路由后得到登录后的页面，你需要加上这个 Cookie
 
@@ -54,11 +54,11 @@ def home():
 
 现在你想知道表达式的路由，点击开始验证后抓包
 
-![Image](/assets/images/wp/2025/week2/orange-snack_3.png)
+![开始验证接口请求](/assets/images/wp/2025/week2/orange-snack_3.png)
 
 验证路由
 
-![Image](/assets/images/wp/2025/week2/orange-snack_4.png)
+![验证 token 接口请求](/assets/images/wp/2025/week2/orange-snack_4.png)
 
 如果你尝试过直接通过路由传输数据，那么服务器会显示“未登录”，这是因为每个路由都经过鉴权处理，确保这些操作是授权了的
 
@@ -80,7 +80,7 @@ def verify_token():
 
 ---
 
-![Image](/assets/images/wp/2025/week2/orange-snack_5.png)
+![JSON 响应和 Set-Cookie](/assets/images/wp/2025/week2/orange-snack_5.png)
 
 `Content-Type: application/json`：表示传输的数据格式是 JSON，从后面的相应也可以看出
 
@@ -133,12 +133,14 @@ print(res_verify.text)
 
 不过光是这样会返回
 
-![Image](/assets/images/wp/2025/week2/orange-snack_6.png)
+![缺少 User-Agent 的响应](/assets/images/wp/2025/week2/orange-snack_6.png)
 
 是的，依旧需要用到 Week1 学习的 HTTP 协议知识，看到这个提示，你应该想到 `User-Agent`
 
 > [!INFO]
-> User-Agent 一般用于标识客户端类型，例如：浏览器类型<span data-desc>（Chrome、Firefox、Safari 等）</span>、操作系统<span data-desc>（Windows、macOS、Linux 等）</span>以及设备类型<span data-desc>（桌面、移动设备等）</span>服务器根据 User-Agent 返回不同的内容，可以为移动设备返回移动版页面，或者为不同浏览器提供兼容性处理如果我们不添加 UA 头，那么默认就是![Image](/assets/images/wp/2025/week2/orange-snack_7.png)
+> User-Agent 一般用于标识客户端类型，例如：浏览器类型<span data-desc>（Chrome、Firefox、Safari 等）</span>、操作系统<span data-desc>（Windows、macOS、Linux 等）</span>以及设备类型<span data-desc>（桌面、移动设备等）</span>。服务器根据 User-Agent 返回不同的内容，可以为移动设备返回移动版页面，或者为不同浏览器提供兼容性处理。如果我们不添加 UA 头，那么默认就是：
+
+![requests 默认 User-Agent](/assets/images/wp/2025/week2/orange-snack_7.png)
 
 所以最终脚本如下：
 
@@ -190,4 +192,4 @@ res_verify = s.post(url=url_verify, json={"token": result})
 print(res_verify.text)
 ```
 
-以上脚本是一个从登录到攻击的全过程脚本，你只需要更新 `domain` 的值就能够全自动获取 flag。
+以上脚本是一个从登录到攻击的全过程脚本，只需要更新 `domain` 的值即可自动获取 FLAG。

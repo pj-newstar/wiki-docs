@@ -27,9 +27,8 @@ import Container from '@/components/docs/Container.vue'
 
 题目要求的 `flag` 转换成了整数，然后使用了 `fun()` 函数处理，得到了一个数组。容易知道该数组就是上面讲的 `remainders`，而 `primes` 已经告诉了怎么生成的。**直接复用 `crt()` 就可以求解**，再把数字转换为字节即可。
 
-<details>
-  <summary>fun fact</summary>
+<Container type='tip'>
 
-题目文件的名字是 `unik_repri`，其中 `unik` 是谐音 unique ，`repri` 是取了 representation 的开头几个音节。
+题目文件的名字是 `unik_repri`，其中 `unik` 是 unique 的谐音，`repri` 取自 representation 的开头几个音节。
 
-</details>
+</Container>

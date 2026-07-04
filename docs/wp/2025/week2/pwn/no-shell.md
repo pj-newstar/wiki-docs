@@ -35,9 +35,9 @@ sudo gem install seccomp-tools
 
 `check` 下可以看到程序的一些基础信息：
 
-- amd64 架构, 64 位, 小端序<span data-desc>（little）</span>
-- No canary, 没有 canary 保护
-- No PIE, 没有 PIE 保护
+- amd64 架构、64 位、小端序<span data-desc>（little）</span>
+- No canary，没有 canary 保护
+- No PIE，没有 PIE 保护
 
 其他的属性可以不关心。
 
@@ -119,7 +119,7 @@ write(1,buf,0x40)
 
 `rdi`，`rsi`，`rdx` 指代 `pop rdi/rsi/rdx ; ret` 所在的地址
 
-## exp
+## EXP
 
 ```python
 from pwn import *

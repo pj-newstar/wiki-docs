@@ -52,7 +52,7 @@ if (score >= targetScores[currentLevel]) {
 }
 ```
 
-阅读代码可以知道通关时，endLevel() 会被调用，我们的分数被提交到 `flag.php`，服务器根据分数返回不同内容。
+阅读代码可以知道通关时，`endLevel()` 会被调用，我们的分数被提交到 `flag.php`，服务器根据分数返回不同内容。
 
 ## 解题
 

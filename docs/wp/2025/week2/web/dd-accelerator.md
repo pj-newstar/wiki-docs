@@ -70,7 +70,7 @@ ping -c 1 127.0.0.1 | ls
 ls *.txt
 ```
 
-→ Shell 会自动展开成:<span data-desc>（假设存在 a.txt b.txt notes.txt ）</span>
+→ Shell 会自动展开成：<span data-desc>（假设存在 a.txt b.txt notes.txt）</span>
 
 ```sh
 ls a.txt b.txt notes.txt

@@ -13,7 +13,7 @@ import Container from '@/components/docs/Container.vue'
 本题考查对 HTTP 协议及 `robots.txt` 文件的理解与应用。
 </Container>
 
-## 前言：给CTF新手的话
+## 前言：给 CTF 新手的话
 
 这是一道 Web 类型的 CTF 题目，主要考查你对 HTTP 协议和 Web 基础知识的理解。如果你是第一次接触 CTF，不用担心，我会一步步带你理解解题思路。
 
@@ -34,10 +34,10 @@ But... Why my head is so painful???!!!
 
 看到这个页面，有几个关键信息需要注意：
 
-1. **"ROBOTS is protecting this website!"** - 这里明确提到了"ROBOTS"
-2. **"Why my head is so painful"** - 这里提到了"头痛"，结合题目名称"multi-headach3"
+1. **"ROBOTS is protecting this website!"**：这里明确提到了「ROBOTS」。
+2. **"Why my head is so painful"**：这里提到了「头痛」，结合题目名称「multi-headach3」。
 
-作为CTF新手，你可能会想：什么是ROBOTS？为什么要强调头痛？
+作为 CTF 新手，你可能会想：什么是 ROBOTS？为什么要强调头痛？
 
 ## 第二步：了解 robots.txt 文件
 
@@ -79,4 +79,4 @@ http://目标网站/hidden.php
 
 ### 奇怪的现象
 
-**最终答案**: 通过访问 `/robots.txt` 发现隐藏页面 `/hidden.php`，然后使用开发者工具查看该页面的HTTP响应头，在 `Fl4g` 头部中找到flag。
+**最终答案**：通过访问 `/robots.txt` 发现隐藏页面 `/hidden.php`，然后使用开发者工具查看该页面的 HTTP 响应头，在 `Fl4g` 头部中找到 FLAG。

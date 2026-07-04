@@ -2,21 +2,28 @@
 titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 ---
 
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
+
 # 小 E 的秘密计划
 
-> 本题主要考察对于各种泄露的利用，包括备份泄露，git泄露，DS_Store泄露
+<Container type='info'>
+
+本题主要考查备份泄露、Git 泄露和 DS_Store 泄露的利用。
+</Container>
 
 结合页面提示 `先找到网站备份文件` 使用 dirsearch 进行备份扫描，下载 `www.zip` 文件
 
-根据提示我们知道网站使用 [git](https://git-scm.com/install/) 进行版本管理, 如果你不熟悉 git，可以前往 <https://www.runoob.com/git/git-tutorial.html> 进一步学习。
+根据提示我们知道网站使用 [git](https://git-scm.com/install/) 进行版本管理。如果你不熟悉 Git，可以前往 <https://www.runoob.com/git/git-tutorial.html> 进一步学习。
 
 `git reflog` 会显示所有引用（HEAD、分支等）的移动历史，包括切换、合并和删除操作。
 
-![reflog](/assets/images/wp/2025/week3/e-secret-plan_1.png)
+![git reflog 删除分支记录](/assets/images/wp/2025/week3/e-secret-plan_1.png)
 
 我们可以看到有一个叫做 `test` 的分支被删除了，可以优先恢复并排查。
 
-我们复制 reflog 每一行前的7位 hash，使用下列命令还原
+我们复制 reflog 每一行前 7 位 Hash，使用下列命令还原。
 
 ```bash
 git branch test 353b98f
@@ -41,6 +48,6 @@ function getUserData() {
 
 下载 `.DS_Store` 文件后，尝试利用 [ds_store_exp](https://github.com/lijiejie/ds_store_exp) 工具还原信息。
 
-![dsstore](/assets/images/wp/2025/week3/e-secret-plan_2.png)
+![DS_Store 文件解析结果](/assets/images/wp/2025/week3/e-secret-plan_2.png)
 
-得到 flag 地址，访问获得最终 flag。
+得到 FLAG 地址，访问后获得最终 FLAG。

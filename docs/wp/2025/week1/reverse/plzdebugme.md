@@ -32,13 +32,13 @@ IDA Pro 不仅是反汇编器，还是一个强大的调试器。
 
 **启动调试：**
 
-在顶部的工具栏中，选择合适的调试器 <span data-desc>（Debugger）</span>。例如，分析本地 Windows 程序，可以选择 "Local Windows debugger"。
+在顶部的工具栏中，选择合适的调试器 <span data-desc>（Debugger）</span>。例如，分析本地 Windows 程序，可以选择「Local Windows debugger」。
 
 ![打开调试](/assets/images/wp/2025/week1/plzdebugme_2.png)
 
 然后点击绿色的运行按钮 <span data-desc>（通常是一个向右的三角形，快捷键 <kbd>F9</kbd>）</span> 开始调试。程序会在第一个断点处停下。
 
-调试器还提供了单步执行 <span data-desc>（<kbd>F7</kbd> 步入, <kbd>F8</kbd> 步过）</span>、查看寄存器、内存、堆栈等功能。
+调试器还提供了单步执行 <span data-desc>（<kbd>F7</kbd> 步入，<kbd>F8</kbd> 步过）</span>、查看寄存器、内存、堆栈等功能。
 
 常见错误：
 
@@ -77,12 +77,12 @@ Remote 模式本质：
 
 环境要求：
 
-1. 你需要有一个 linux 环境
-2. 在 IDA-dbgsrv 里有个文件叫 linux_server，把它放到你的 linux 环境里
+1. 你需要有一个 Linux 环境。
+2. 在 IDA-dbgsrv 里有个文件叫 `linux_server`，把它放到你的 Linux 环境里。
 
 ![linux_server](/assets/images/wp/2025/week1/plzdebugme_3.png)
 
-然后在 linux 里依次输入以下命令：
+然后在 Linux 里依次输入以下命令：
 
 ```bash
 chmod 777 linux_server
@@ -91,11 +91,11 @@ chmod 777 linux_server
 
 ![远程启动](/assets/images/wp/2025/week1/plzdebugme_4.png)
 
-然后在 IDA 里选择 Remote Linux Debugger，输入你的 linux 服务器的 ip 地址，端口号，然后点击连接。
+然后在 IDA 里选择 Remote Linux Debugger，输入你的 Linux 服务器 IP 地址和端口号，然后点击连接。
 
 ![IDA 设置](/assets/images/wp/2025/week1/plzdebugme_5.png)
 
-输入在你的 linux 环境里面，其他与本地调试相同
+输入在你的 Linux 环境里面，其他与本地调试相同。
 
 ![linux 环境输入](/assets/images/wp/2025/week1/plzdebugme_6.png)
 
@@ -171,4 +171,4 @@ chmod 777 linux_server
 
 ![获得 flag](/assets/images/wp/2025/week1/plzdebugme_15.png)
 
-最终 flag 为：`flag{It3_D3bugG_T11me!_le3_play}`。
+最终 FLAG 为：`flag{It3_D3bugG_T11me!_le3_play}`。

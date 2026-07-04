@@ -25,7 +25,7 @@ $stmt->execute();
 1. 用户上传的文件内容（content）和文件名（filename）被直接存入了 MySQL 数据库，而不是保存在 Web 服务器的磁盘目录中。
 2. 既然文件在数据库里，Apache/Nginx 就无法直接访问和解析它。这意味着我们就算上传了木马，也没法直接通过 URL 访问来触发执行。
 
-### SQL 注入 (`getFileList.php`)
+### SQL 注入（`getFileList.php`）
 
 既然无法直接上传 Webshell，我们需要寻找其他突破口。查看 `getFileList.php`：
 
@@ -80,10 +80,10 @@ $result = $mysqli->query($sql);
 
 ### Exploit
 
-```url
+```plaintext
 /src/getFileList.php?order=upload_time%20INTO%20OUTFILE%20%27/var/www/html/shell.php%27
 ```
 
 如果页面没有报错，说明 SQL 执行成功。此时 MySQL 会把整张表的数据（包含我们刚才上传的恶意文件名）全部写入到 `shell.php` 中。
 
-这个时候就可以利用 `shell.php` 运行 `/readFlag` 拿到 flag 了。
+此时即可利用 `shell.php` 运行 `/readFlag` 拿到 FLAG。

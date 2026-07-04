@@ -55,7 +55,7 @@ document.getElementById("shieldOverlay").remove();
 
 结合 `太弱了` 和 URL 中 `weak_password` 的提示，猜测是弱口令爆破。
 
-这里使用[这个字典](/resources/wp25/password.top1000.txt)先进行对 `admin` 用户的爆破。
+这里使用 [这个字典](/resources/wp25/password.top1000.txt) 先进行对 `admin` 用户的爆破。
 
 进入 BurpSuite 先随便输入个密码进行抓包，接着发送至 intruder，将输入密码的部分选中再点击“添加payload”
 

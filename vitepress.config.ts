@@ -2,8 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import ElementPlus from "unplugin-element-plus/vite";
 import svgLoader from "vite-svg-loader";
-import { defineConfig, loadEnv } from "vitepress";
 import type { DefaultTheme } from "vitepress";
+import { defineConfig, loadEnv } from "vitepress";
 import YAML from "yaml";
 import { asBool } from "./theme/scripts/utils";
 

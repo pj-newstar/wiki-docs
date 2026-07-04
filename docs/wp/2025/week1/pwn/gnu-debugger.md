@@ -21,15 +21,15 @@ import Container from '@/components/docs/Container.vue'
 ./gdb_challenge
 ```
 
-输入 `run <ip> <port>` 开始游戏, 其中 `ip` 和 `port` 通过开启容器得到。
+输入 `run <ip> <port>` 开始游戏，其中 `ip` 和 `port` 通过开启容器得到。
 
 :::tip 举例
 
-首先要做的就是开启题目容器
+首先要做的就是开启题目容器。
 
 ![初始容器](/assets/images/wp/2025/week1/gnu-debugger_1.png)
 
-nc 后面的 `8.147.132.32` 就是 ip , 而 `39543` 则是 port，使用 `run 8.147.132.32 39543` 命令开始游戏。
+nc 后面的 `8.147.132.32` 就是 IP，而 `39543` 则是端口，使用 `run 8.147.132.32 39543` 命令开始游戏。
 
 :::
 
@@ -48,7 +48,7 @@ nc 后面的 `8.147.132.32` 就是 ip , 而 `39543` 则是 port，使用 `run 8.
 
 ![寄存器](/assets/images/wp/2025/week1/gnu-debugger_2.png)
 
-复制后使用 continue 指令 `c`让程序继续执行，随后提交即可。
+复制后使用 continue 指令 `c` 让程序继续执行，随后提交即可。
 
 ## 关卡 2：义眼丁真
 

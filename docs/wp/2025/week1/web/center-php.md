@@ -48,7 +48,10 @@ if(isset($_POST['newstar2025'])){
 
 ## 绕过
 
-这里是想考察一下 newstar 们遇到未知函数的检索能力
+<Container type='info'>
+
+这里是想考查一下遇到未知函数的检索能力。
+</Container>
 
 先来分析一下函数逻辑
 

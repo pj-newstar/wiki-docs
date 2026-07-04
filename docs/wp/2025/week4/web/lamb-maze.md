@@ -24,21 +24,21 @@ if ($_GET["ma_ze.path"]){
 
 [https://www.php.net/manual/zh/language.variables.external.php](https://www.php.net/manual/zh/language.variables.external.php)
 
-![image](/assets/images/wp/2025/week4/lamb-maze_1.png)
+![PHP 外部变量名说明](/assets/images/wp/2025/week4/lamb-maze_1.png)
 
-![image](/assets/images/wp/2025/week4/lamb-maze_2.png)
+![变量名字符转换规则](/assets/images/wp/2025/week4/lamb-maze_2.png)
 
 同样的，`[` 也是一个会被转换为 `_` 的符号
 
 但是在 PHP 版本小于 8 时，中括号 `[` 被转换成下划线 `_` 的行为会导致转换错误，使得接下来如果该参数名中还有 `非法字符` 并不会继续转换成下划线 `_`
 
-![image](/assets/images/wp/2025/week4/lamb-maze_3.png)
+![PHP 修复中括号解析问题的提交](/assets/images/wp/2025/week4/lamb-maze_3.png)
 
 可以看见在 [php8 对这个 bug 修复的 commit](https://github.com/php/php-src/commit//fc4d462e947828fdbeac6020ac8f34704a218834?branch=fc4d462e947828fdbeac6020ac8f34704a218834&diff=unified) 中，原来的逻辑是只对 `[` 进行了一次替换，因此导致了这个问题
 
 所以这里我们只需要传入 `ma[ze.path=123` 即可绕过
 
-![image](/assets/images/wp/2025/week4/lamb-maze_4.png)
+![绕过变量名转换](/assets/images/wp/2025/week4/lamb-maze_4.png)
 
 ## 反序列化
 
@@ -227,7 +227,7 @@ class endPoint{
 }
 ```
 
-首先我们从 `include "flag.php";` 可以推测 flag 在 `flag.php` 中，因此我们可以很快注意到一个文件包含的函数
+首先从 `include "flag.php";` 可以推测 FLAG 在 `flag.php` 中，因此可以很快注意到一个文件包含的函数
 
 ```php
 class endPoint{
@@ -292,7 +292,7 @@ class startPoint{
 
 > 如果你恰好卡在了 pop 链分析的某一步，走出旁边的小迷宫也能给到一些提示哦
 
-![hint](/assets/images/wp/2025/week4/lamb-maze_5.png)
+![迷宫提示](/assets/images/wp/2025/week4/lamb-maze_5.png)
 
 最终的 pop 链如下
 
@@ -346,4 +346,4 @@ echo urlencode(serialize($startPoint))."<br>\n";
 echo base64_encode(serialize($startPoint))."<br>\n";
 ```
 
-![image](/assets/images/wp/2025/week4/lamb-maze_6.png)
+![构造反序列化 payload](/assets/images/wp/2025/week4/lamb-maze_6.png)
