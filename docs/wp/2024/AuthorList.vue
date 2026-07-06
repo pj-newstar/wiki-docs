@@ -16,7 +16,7 @@ const vprops = withDefaults(
   {
     keys: () => Object.keys(authors),
     title_tmpl: (key: string) => {
-      return `Week ${key.replace(/[^\d]/g, "")} 出题人`;
+      return `Week ${key.replace(/[^\d]/g, "")}`;
     },
     lables: () => ["题目名称", "方向", "出题人"],
     props: () => ["name", "category", "author"],
@@ -63,5 +63,14 @@ const vprops = withDefaults(
 
 .author-list td {
   --el-table-border-color: var(--vp-c-divider);
+}
+
+.author-list {
+  .el-collapse-item__header {
+    padding-left: 8px;
+  }
+  .el-collapse-item__content {
+    padding-bottom: 0;
+  }
 }
 </style>
