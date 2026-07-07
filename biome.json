@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -10,31 +10,33 @@
     "attributePosition": "auto"
   },
   "files": {
-    "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json"],
-    "ignore": [
-      "**/.git",
-      "**/.github",
-      "**/.DS_Store",
-      "**/.vscode",
-      "**/.idea",
-      "**/.cache",
-      "**/node_modules",
-      "./build",
-      "**/dist",
-      "**/.env",
-      "**/.env.*",
-      "**/pnpm-lock.yaml",
-      "**/package-lock.json",
-      "**/yarn.lock"
+    "includes": [
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.json",
+      "!**/.git",
+      "!**/.github",
+      "!**/.DS_Store",
+      "!**/.vscode",
+      "!**/.idea",
+      "!**/.cache",
+      "!**/node_modules",
+      "!build",
+      "!**/dist",
+      "!**/.env",
+      "!**/.env.*",
+      "!**/pnpm-lock.yaml",
+      "!**/package-lock.json",
+      "!**/yarn.lock"
     ]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "style": {
         "noNonNullAssertion": "off"
       },
@@ -46,13 +48,13 @@
         "noUnusedImports": "error",
         "noConstAssign": "error",
         "noUnreachable": "error",
-        "noUnnecessaryContinue": "warn",
         "noUnsafeFinally": "error",
         "noUnusedLabels": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "warn",
         "noUndeclaredVariables": "error"
-      }
+      },
+      "complexity": { "noUselessContinue": "warn" }
     }
   },
   "javascript": {

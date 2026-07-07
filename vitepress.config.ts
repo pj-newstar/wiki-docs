@@ -2,8 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import ElementPlus from "unplugin-element-plus/vite";
 import svgLoader from "vite-svg-loader";
-import { defineConfig, loadEnv } from "vitepress";
 import type { DefaultTheme } from "vitepress";
+import { defineConfig, loadEnv } from "vitepress";
 import YAML from "yaml";
 import { asBool } from "./theme/scripts/utils";
 
@@ -27,7 +27,7 @@ export default ({ mode }: { mode: string }) => {
       <Partial<DefaultTheme.Config>>{
         siteTitle: "NewStar CTF",
 
-        socialLinks: [{ icon: "github", link: "https://github.com/project-newstar/wiki-docs" }],
+        socialLinks: [{ icon: "github", link: "https://github.com/pj-newstar/wiki-docs" }],
 
         search: {
           provider: "local",
