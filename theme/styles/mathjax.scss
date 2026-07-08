@@ -1,0 +1,48 @@
+// VitePress compiles MathJax SVG output into Vue render functions. During that
+// step, MathJax's inline style on mjx-assistive-mml can be dropped, which makes
+// the hidden MathML fallback visible beside the SVG formula.
+mjx-container[jax="SVG"] {
+  direction: ltr;
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  vertical-align: middle;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  max-width: 100%;
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+mjx-container[jax="SVG"] > svg {
+  display: inline-block;
+  margin: auto;
+  min-width: 1px;
+  min-height: 1px;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > mjx-assistive-mml {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+}
+
+#app mjx-container[jax="SVG"] > mjx-assistive-mml {
+  width: 1px !important;
+  height: 1px !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+}
